@@ -8,10 +8,16 @@ export const Proyecto = () => {
         <>
 
             <NavBar />
+
+            
             <Box component='main'
                 sx={{ flexGrow: 1, p: 3 }}>
                 <Toolbar />
-                <div className='container'>
+                <div className='container '>
+                    <div >
+                    <input type="text" className='form-control' placeholder/>
+                    </div>
+                    <Toolbar />
                     <div className='row'>
                         <div className='col-6'>
                             <OutlinedCard />
