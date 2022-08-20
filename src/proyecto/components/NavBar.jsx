@@ -20,7 +20,7 @@ export const NavBar = ({ drawerWidth = 0 }) => {
                 </IconButton>
 
                 <Grid container direction='row' justifyContent='space-between' alignItems='center'>
-                    <Typography variant='h6' noWrap component='div'> JournalApp </Typography>
+                    <Typography variant='h6' noWrap component='div'> Proyectos </Typography>
 
                     <IconButton color='error'>
                         <LogoutOutlined />
