@@ -1,7 +1,8 @@
-import { Toolbar, AppBar, IconButton, MenuOutlined,Grid,Typography,LogoutOutlined } from '@mui/material'
+import { LogoutOutlined, MenuOutlined } from '@mui/icons-material'
+import { Toolbar, AppBar, IconButton,Grid,Typography } from '@mui/material'
 import React from 'react'
 
-export const NavBar = ({ drawerWidth = 240 }) => {
+export const NavBar = ({ drawerWidth = 0 }) => {
     return (
         <AppBar
             position='fixed'
@@ -16,7 +17,6 @@ export const NavBar = ({ drawerWidth = 240 }) => {
                     edge="start"
                     sx={{ mr: 2, display: { sm: 'none' } }}
                 >
-                    <MenuOutlined />
                 </IconButton>
 
                 <Grid container direction='row' justifyContent='space-between' alignItems='center'>
