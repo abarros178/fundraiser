@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(90deg, #f4f4f4 0%, #f5f5f5 100%);
 }
 
 code {
@@ -115,6 +116,8 @@ code {
   animation-delay: 0s;
   animation-duration: 11s;
 }
+
+
 @keyframes animate {
 
   0%{

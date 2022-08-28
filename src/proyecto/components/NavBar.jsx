@@ -1,5 +1,5 @@
 import { LogoutOutlined, MenuOutlined } from '@mui/icons-material'
-import { Toolbar, AppBar, IconButton,Grid,Typography } from '@mui/material'
+import { Toolbar, AppBar, IconButton, Grid, Typography } from '@mui/material'
 import React from 'react'
 
 export const NavBar = ({ drawerWidth = 0 }) => {
@@ -20,7 +20,10 @@ export const NavBar = ({ drawerWidth = 0 }) => {
                 </IconButton>
 
                 <Grid container direction='row' justifyContent='space-between' alignItems='center'>
-                    <Typography variant='h6' noWrap component='div'> JournalApp </Typography>
+                    <IconButton color='secondary'>
+                        {/* /<LogoutOutlined /> */}
+                        <Typography variant='h6' noWrap component='div'> FundacionBrr </Typography>
+                    </IconButton>
 
                     <IconButton color='error'>
                         <LogoutOutlined />
