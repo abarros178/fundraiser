@@ -55,7 +55,7 @@ const Proyecto = () => {
                                     <label class="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">Metodo de donacion</label>
                                   <input class="block w-full py-2 pl-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" type="text" placeholder='Visa, MasterCard, otros' />
                                 </div>
-                                <button type="button" class="focus:outline-none mt-3 mx-2 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">Green</button>
+                                <button type="button" class="focus:outline-none mt-3 mx-2 text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800">DONAR</button>
                             </div>
                         </form>
 
