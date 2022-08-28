@@ -15,7 +15,7 @@ export const NavBar = ({ drawerWidth = 0 }) => {
                 <IconButton
                     color='inherit'
                     edge="start"
-                    sx={{ mr: 2, display: { sm: 'none' } }}
+                    sx={{ mr: 3, display: { sm: 'none' } }}
                 >
                 </IconButton>
 
