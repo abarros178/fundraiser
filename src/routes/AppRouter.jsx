@@ -1,21 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
-    BrowserRouter,
     Routes,
     Route,
 } from "react-router-dom";
-import App from '../App';
 import Inicio from '../proyecto/view/Inicio/Inicio';
-import Proyecto from '../proyecto/view/Proyecto';
-import { Proyectos } from '../proyecto/view/Proyectos';
+import { ProyectoView } from '../proyecto/view/proyecto/ProyectoView';
+
+
 
 export const AppRouter = () => {
+    
     return (
         <>
             <Routes>
-                <Route path="/" element={<Inicio />}/>
-                <Route path="/proyectos" element={<Proyectos />}/>
-                <Route path="/proyecto" element={<Proyecto />}/>
+                <Route path="/" element={<Inicio />} />
+                <Route path="/proyecto" element={<ProyectoView />} />
             </Routes>
         </>
     )

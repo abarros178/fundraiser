@@ -9,10 +9,6 @@ import { ProyectListInicio } from './ProyectListInicio.jsx'
 
 const Inicio = () => {
 
-  const { data, error, execute, loading } = useHttpRequest(setting.donante_main, METHOD.GET)
-  console.log(data)
-
-
   return (
     <>
 
@@ -35,7 +31,7 @@ const Inicio = () => {
           </div>
         </div>
       </section>
-      <ProyectListInicio/>
+      <ProyectListInicio />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-wrap -m-4">
