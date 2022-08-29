@@ -5,12 +5,9 @@ export const dominio = {
 }
 
 export const setting = {
-    donante_main: dominio.main + "/api/donante/",
-    donante_develop: dominio.develop + "/api/donante/",
+    visitas_main: dominio.main + "/api/visitas/",
     proyecto_main: dominio.main + "/api/proyectos/",
-    proyecto_develop: dominio.develop + "/api/proyectos/",
     donaciones_main: dominio.main + "/api/donaciones/",
-    donaciones_develop: dominio.develop + "/api/donaciones/",
 }
 
 export const METHOD = {
