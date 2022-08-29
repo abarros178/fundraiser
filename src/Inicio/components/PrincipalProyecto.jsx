@@ -1,10 +1,12 @@
 import { Spin } from 'antd';
 import React, { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { ButtonNeoSoft } from '../../components/ButtonNeoSoft';
 import { useHttpRequest } from '../../hooks/useHttpRequest';
 import { METHOD, setting } from '../../settings/Settings';
 
 export const PrincipalProyecto = ({ data }) => {
-
+    const navigate = useNavigate()
 
 
     return (
@@ -19,7 +21,7 @@ export const PrincipalProyecto = ({ data }) => {
                     </h1>
                     <p className="mb-8 leading-relaxed">{data?.descripcion}</p>
                     <div className="flex justify-center">
-                        <button className="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Leer mas...</button>
+                        <ButtonNeoSoft label={"Dona aqui"} type="1" onClick={() => navigate("/proyecto/acciones/"+data.uid)} />
 
                     </div>
                 </div>
