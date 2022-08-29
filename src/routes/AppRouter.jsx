@@ -5,7 +5,7 @@ import {
     Route,
 } from "react-router-dom";
 import App from '../App';
-import Inicio from '../proyecto/view/Inicio';
+import Inicio from '../proyecto/view/Inicio/Inicio';
 import Proyecto from '../proyecto/view/Proyecto';
 import { Proyectos } from '../proyecto/view/Proyectos';
 
