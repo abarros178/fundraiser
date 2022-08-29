@@ -3,13 +3,13 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Inicio from '../proyecto/view/Inicio/Inicio';
-import { ProyectoView } from '../proyecto/view/proyecto/ProyectoView';
+import Inicio from '../Inicio/Inicio.jsx';
+import { ProyectoView } from '../proyecto/view/ProyectoView.jsx';
 
 
 
 export const AppRouter = () => {
-    
+
     return (
         <>
             <Routes>

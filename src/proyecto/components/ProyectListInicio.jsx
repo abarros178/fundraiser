@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { useHttpRequest } from '../../../hooks/useHttpRequest'
-import { METHOD, setting } from '../../../settings/Settings'
+import { useHttpRequest } from '../../hooks/useHttpRequest.jsx'
+import { METHOD, setting } from '../../settings/Settings'
 import { ProyectItem } from './ProyectItem'
 
 export const ProyectListInicio = () => {

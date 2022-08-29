@@ -1,10 +1,8 @@
 import React from 'react'
-import { useHttpRequest } from "../../../hooks/useHttpRequest.jsx"
-import { METHOD, setting } from '../../../settings/Settings'
-import { NavBar } from '../../components/NavBar'
+import { NavBar } from '../components/NavBar.jsx'
 import { FooterInicio } from './FooterInicio.jsx'
 import { HeaderInicio } from './HeaderInicio'
-import { ProyectListInicio } from './ProyectListInicio.jsx'
+import { ProyectListInicio } from '../proyecto/components/ProyectListInicio.jsx'
 
 
 const Inicio = () => {
