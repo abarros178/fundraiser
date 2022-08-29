@@ -1,8 +1,8 @@
 import React from 'react'
-import { NavBar } from '../components/NavBar.jsx'
-import { FooterInicio } from './FooterInicio.jsx'
-import { HeaderInicio } from './HeaderInicio'
-import { ProyectListInicio } from '../proyecto/components/ProyectListInicio.jsx'
+import { NavBar } from '../../components/NavBar.jsx'
+import { FooterInicio } from '../components/FooterInicio.jsx'
+import { HeaderInicio } from '../components/HeaderInicio.jsx'
+import { ProyectListInicio } from '../../proyecto/components/ProyectListInicio.jsx'
 
 
 const Inicio = () => {

@@ -3,7 +3,7 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
-import Inicio from '../Inicio/Inicio.jsx';
+import Inicio from '../Inicio/view/Inicio.jsx';
 import { ProyectoView } from '../proyecto/view/ProyectoView.jsx';
 
 
