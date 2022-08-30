@@ -2,9 +2,10 @@ import React, { useEffect } from 'react'
 import { useHttpRequest } from '../../hooks/useHttpRequest'
 import { METHOD, setting } from '../../settings/Settings'
 import { useParams } from 'react-router-dom';
-import { Col, Row, Space, Tabs } from 'antd';
+import { Card, Col, Row, Space, Tabs } from 'antd';
 import { SobreProyecto } from '../components/SobreProyecto';
 import { Donar } from '../components/Donar';
+import { PrincipalProyecto } from '../../Inicio/components/PrincipalProyecto';
 
 
 export const AccionesProyectos = () => {
@@ -18,15 +19,18 @@ export const AccionesProyectos = () => {
 
     return (
         <>
-            <Row>
-                <Col span={12} style={{ display: 'flex', justifyContent: 'center' }}>
-                    <SobreProyecto />
+            <Row  justify="center" gutter={[16,16]} style={{padding:'initial'}}>
+                <Col span={10}>
+                    {
+                        data && <SobreProyecto data={data} />
 
+                    }
                 </Col>
-                <Col span={12} style={{ display: 'flex', justifyContent: 'center' }}>
+                <Col span={13}>
                     <Donar />
                 </Col>
             </Row>
+
         </>
     )
 }

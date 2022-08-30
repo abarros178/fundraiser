@@ -21,7 +21,7 @@ export const PrincipalProyecto = ({ data }) => {
                     </h1>
                     <p className="mb-8 leading-relaxed">{data?.descripcion}</p>
                     <div className="flex justify-center">
-                        <ButtonNeoSoft label={"Dona aqui"} type="1" onClick={() => navigate("/proyecto/acciones/"+data.uid)} />
+                        <ButtonNeoSoft label={"Dona aqui"} type="1" onClick={() => navigate("/donar/proyecto/" + data.uid)} />
 
                     </div>
                 </div>

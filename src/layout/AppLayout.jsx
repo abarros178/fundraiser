@@ -17,9 +17,13 @@ const AppLayout = ({ children }) => {
         items={[{
           label: `Fundacion`,
           onClick: () => navigate('/'),
+        },
+        {
+          label: 'Donar',
+
         }, {
           label: 'Acerca de',
-          style: {position: 'relative',right: '0px'}
+          style: { position: 'relative', right: '0px' }
         }]}
       />
     </Header>

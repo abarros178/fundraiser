@@ -16,7 +16,7 @@ export const AppRouter = () => {
             <Routes>
                 <Route path="/" element={<Inicio />} />
                 <Route path="/proyecto" element={<ProyectoView />} />
-                <Route path="/proyecto/acciones/:id" element={<AccionesProyectos />} />
+                <Route path="/donar/proyecto/:id" element={<AccionesProyectos />} />
             </Routes>
         </>
     )
