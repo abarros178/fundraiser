@@ -18,7 +18,6 @@ const Inicio = () => {
     <>
 
 
-      <NavBar />
       <HeaderInicio />
       
       {

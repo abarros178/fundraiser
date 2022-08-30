@@ -5,9 +5,7 @@ import { useParams } from 'react-router-dom';
 import { Tabs } from 'antd';
 import { SobreProyecto } from '../components/SobreProyecto';
 import { Donar } from '../components/Donar';
-import { Row, Space } from 'antd'
-import { NavBar } from '../../components/NavBar';
-import { Toolbar } from '@mui/material';
+import { Space } from 'antd'
 const { TabPane } = Tabs;
 
 export const AccionesProyectos = () => {
@@ -21,8 +19,7 @@ export const AccionesProyectos = () => {
 
     return (
         <>
-            <NavBar />
-            <Toolbar />
+
             <Space style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
                 <Tabs type='card'>
                     <TabPane tab="Acerca del proyecto" key="1" >
