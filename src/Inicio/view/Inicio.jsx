@@ -58,7 +58,6 @@ const Inicio = () => {
           </div>
         </div>
       </section>
-      <FooterInicio />
 
 
 

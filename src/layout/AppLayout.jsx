@@ -1,9 +1,13 @@
-import { Breadcrumb, Layout, Menu } from 'antd';
+import { Layout, Menu } from 'antd';
 import React from 'react';
-const { Header, Content, Footer } = Layout;
+import { useNavigate } from 'react-router-dom';
+import { FooterInicio } from '../Inicio/components/FooterInicio';
+const { Header, Content } = Layout;
 
-const AppLayout = ({ children }) => (
-  <Layout className="layout">
+const AppLayout = ({ children }) => {
+  const navigate = useNavigate();
+
+  return (<Layout className="layout">
     <Header>
       <div className="logo" />
       <Menu
@@ -12,9 +16,10 @@ const AppLayout = ({ children }) => (
         defaultSelectedKeys={['2']}
         items={[{
           label: `Fundacion`,
-          onClick: () => console.log('object'),
-        },{
-          label:''
+          onClick: () => navigate('/'),
+        }, {
+          label: 'Acerca de',
+          style: {position: 'relative',right: '0px'}
         }]}
       />
     </Header>
@@ -26,14 +31,8 @@ const AppLayout = ({ children }) => (
     >
       <div className="site-layout-content">{children}</div>
     </Content>
-    <Footer
-      style={{
-        textAlign: 'center',
-      }}
-    >
-      Ant Design ©2018 Created by Ant UED
-    </Footer>
-  </Layout>
-);
+    <FooterInicio />
+  </Layout>)
+};
 
 export default AppLayout;
