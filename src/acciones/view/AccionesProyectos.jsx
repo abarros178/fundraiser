@@ -19,16 +19,23 @@ export const AccionesProyectos = () => {
 
     return (
         <>
-            <Row  justify="center" gutter={[16,16]} style={{padding:'initial'}}>
-                <Col span={10}>
-                    {
-                        data && <SobreProyecto data={data} />
-
-                    }
-                </Col>
-                <Col span={13}>
-                    <Donar />
-                </Col>
+            <Row justify="center" >
+                <Card>
+                    <Card.Grid hoverable={false} style={{
+                        width: '50%',
+                        textAlign: 'center',
+                    }}>
+                        {
+                            data && <SobreProyecto data={data} /> 
+                        }
+                    </Card.Grid>
+                    <Card.Grid hoverable={false} style={{
+                        width: '50%',
+                        textAlign: 'center',
+                    }}>
+                        <Donar/>
+                    </Card.Grid>
+                </Card>
             </Row>
 
         </>

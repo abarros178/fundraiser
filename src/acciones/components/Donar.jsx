@@ -2,17 +2,17 @@ import { Card, Cascader, Col, Row, Space, Typography } from 'antd'
 import Input from 'antd/lib/input/Input'
 import React from 'react'
 import FormularioDonar from './FormularioDonar'
-const { Title } = Typography
+const { Title,Text } = Typography
 export const Donar = () => {
   return (
     <>
 
-
-      <Card hoverable title="Llene el formulario para registrar su donacion" >
+      <Row>
+        <Title level={1}>Llene el formulario</Title>
         <Col span={24}>
           <FormularioDonar />
         </Col>
-      </Card>
+      </Row>
 
 
 

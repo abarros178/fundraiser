@@ -2,6 +2,7 @@ import {
     Button,
     Card,
     Cascader,
+    Checkbox,
     DatePicker,
     Form,
     Input,
@@ -13,6 +14,7 @@ import {
 } from 'antd';
 import Title from 'antd/lib/skeleton/Title';
 import React, { useState } from 'react';
+import { ButtonNeoSoft } from '../../components/ButtonNeoSoft';
 
 const FormularioDonar = () => {
     const [componentSize, setComponentSize] = useState('default');
@@ -37,64 +39,33 @@ const FormularioDonar = () => {
             onValuesChange={onFormLayoutChange}
             size={'large'}
         >
-            <Form.Item label="Form Size" name="size">
-                <Radio.Group>
-                    <Radio.Button value="small">Small</Radio.Button>
-                    <Radio.Button value="default">Default</Radio.Button>
-                    <Radio.Button value="large">Large</Radio.Button>
-                </Radio.Group>
-            </Form.Item>
-            <Form.Item label="Input">
+
+            <Form.Item label="Nombre">
                 <Input />
+                <Checkbox>Anonimo?</Checkbox>
             </Form.Item>
-            <Form.Item label="Select">
+            <Form.Item label="Ustes es">
                 <Select>
-                    <Select.Option value="demo">Demo</Select.Option>
+                    <Select.Option value="graduado">Graduado</Select.Option>
+                    <Select.Option value="estudiante">Estudiante</Select.Option>
+                    <Select.Option value="profesor">Profesor</Select.Option>
+                    <Select.Option value="otro">Otro</Select.Option>
                 </Select>
             </Form.Item>
-            <Form.Item label="TreeSelect">
-                <TreeSelect
-                    treeData={[
-                        {
-                            title: 'Light',
-                            value: 'light',
-                            children: [
-                                {
-                                    title: 'Bamboo',
-                                    value: 'bamboo',
-                                },
-                            ],
-                        },
-                    ]}
-                />
+            <Form.Item label="Cuanto va a donar">
+                <Input type="number" />
             </Form.Item>
-            <Form.Item label="Cascader">
-                <Cascader
-                    options={[
-                        {
-                            value: 'zhejiang',
-                            label: 'Zhejiang',
-                            children: [
-                                {
-                                    value: 'hangzhou',
-                                    label: 'Hangzhou',
-                                },
-                            ],
-                        },
-                    ]}
-                />
+            <Form.Item label="Medio de pago">
+                <Select>
+                    <Select.Option value="tarjeta_credito">Tarjeta de credito</Select.Option>
+                    <Select.Option value="tarjeta_debito">Tarjeta de debito</Select.Option>
+                    <Select.Option value="paypal">Paypal</Select.Option>
+                    <Select.Option value="nequi">Nequi</Select.Option>
+                    <Select.Option value="otro">Otro</Select.Option>
+                </Select>
             </Form.Item>
-            <Form.Item label="DatePicker">
-                <DatePicker />
-            </Form.Item>
-            <Form.Item label="InputNumber">
-                <InputNumber />
-            </Form.Item>
-            <Form.Item label="Switch" valuePropName="checked">
-                <Switch />
-            </Form.Item>
-            <Form.Item label="Button">
-                <Button>Button</Button>
+            <Form.Item >
+                <ButtonNeoSoft type={2} label="Guardar"></ButtonNeoSoft>
             </Form.Item>
         </Form>
     );

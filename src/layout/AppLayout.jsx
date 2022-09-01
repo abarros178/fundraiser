@@ -31,6 +31,7 @@ const AppLayout = ({ children }) => {
       style={{
         padding: '0 50px',
         marginTop: '35px',
+        minHeight: '100vh',
       }}
     >
       <div className="site-layout-content">{children}</div>
