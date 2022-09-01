@@ -31,7 +31,7 @@ const AppLayout = ({ children }) => {
       style={{
         padding: '0 50px',
         marginTop: '35px',
-        minHeight: '100vh',
+        minHeight: '72vh',
         color: 'white',
       }}
     >
