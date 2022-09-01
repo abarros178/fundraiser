@@ -6,6 +6,7 @@ import { Card, Col, Row, Space, Tabs } from 'antd';
 import { SobreProyecto } from '../components/SobreProyecto';
 import { Donar } from '../components/Donar';
 import { PrincipalProyecto } from '../../Inicio/components/PrincipalProyecto';
+import FormularioDonar from '../components/FormularioDonar';
 
 
 export const AccionesProyectos = () => {
@@ -21,20 +22,17 @@ export const AccionesProyectos = () => {
         <>
             <Row justify="center" >
                 <Card>
-                    <Card.Grid hoverable={false} style={{
-                        width: '50%',
-                        textAlign: 'center',
-                    }}>
-                        {
-                            data && <SobreProyecto data={data} /> 
-                        }
-                    </Card.Grid>
-                    <Card.Grid hoverable={false} style={{
-                        width: '50%',
-                        textAlign: 'center',
-                    }}>
-                        <Donar/>
-                    </Card.Grid>
+                    <Row>
+                        <Col span={12}>
+                            {
+                                data && <SobreProyecto data={data} />
+                            }
+                        </Col>
+                        <Col span={12} >
+                           <FormularioDonar/>
+                        </Col>
+                    </Row>
+
                 </Card>
             </Row>
 
