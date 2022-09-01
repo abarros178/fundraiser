@@ -34,7 +34,7 @@ export const AccionesProyectos = () => {
                     </>
                     :
                     <>
-                        <CardDonar proyecto={data} id={params}/>
+                        <CardDonar proyecto={data} id={params.id}/>
                     </>
             }
 

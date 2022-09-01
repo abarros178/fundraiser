@@ -28,14 +28,14 @@ const FormularioDonar = () => {
     return (
 
         <>
-            <Row gutter={16}>
+            <Row gutter={[16,16]}>
                 <Col span={24}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
                         <label for="Name" style={{
                             lineHeight: "130%", fontSize: "12px", color: "black",
                         }}>Nombre</label>
                         <Input placeholder='Digite el nombre'  />
-                        <Checkbox style={{ margin: "10px 0px" }}>Soy anonimo</Checkbox>
+                        <Checkbox>Soy anonimo</Checkbox>
                     </div>
                 </Col>
                 <Col span={24}>
@@ -49,6 +49,15 @@ const FormularioDonar = () => {
                             <Select.Option value="profesor">Profesor</Select.Option>
                             <Select.Option value="otro">Otro</Select.Option>
                         </Select>
+
+                    </div>
+                </Col>
+                <Col span={24}>
+                    <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <label for="Name" style={{
+                            lineHeight: "130%", fontSize: "12px", color: "black",
+                        }}>Cuanto va a donar</label>
+                        <Input type="number" />
 
                     </div>
                 </Col>
