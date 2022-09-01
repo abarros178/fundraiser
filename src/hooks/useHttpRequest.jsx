@@ -8,6 +8,7 @@ export const useHttpRequest = (url, method) => {
   const [statusCode, setStatusCode] = useState(null)
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [loadingComponent, setLoadingComponent] = useState(true)
   const [message, setMessage] = useState(null)
 
 
@@ -47,7 +48,8 @@ export const useHttpRequest = (url, method) => {
       }
     } finally {
       setLoading(false)
+      setLoadingComponent(false)
     }
   }
-  return { data, message, error, statusCode, loading, execute }
+  return { data, message, error, statusCode, loading, execute,loadingComponent }
 }

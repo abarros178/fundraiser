@@ -10,7 +10,7 @@ import { Space, Spin } from 'antd'
 
 
 const Inicio = () => {
-  const { data, execute, loading } = useHttpRequest(setting.proyecto_main + "630d0b51dda3b5d4e76a6363", METHOD.GET)
+  const { data, execute,loadingComponent } = useHttpRequest(setting.proyecto_main + "630d0b51dda3b5d4e76a6363", METHOD.GET)
 
   useEffect(() => {
     execute()
@@ -19,7 +19,7 @@ const Inicio = () => {
     <>
 
       {
-        !data ?
+        loadingComponent ?
           (<Space size="middle">
             <Spin size="large" />
           </Space>)

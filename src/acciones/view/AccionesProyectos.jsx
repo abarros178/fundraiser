@@ -2,39 +2,41 @@ import React, { useEffect } from 'react'
 import { useHttpRequest } from '../../hooks/useHttpRequest'
 import { METHOD, setting } from '../../settings/Settings'
 import { useParams } from 'react-router-dom';
-import { Card, Col, Row, Space, Tabs } from 'antd';
-import { SobreProyecto } from '../components/SobreProyecto';
-import { Donar } from '../components/Donar';
-import { PrincipalProyecto } from '../../Inicio/components/PrincipalProyecto';
+import { Card, Col, Row, Space, Spin, Statistic, Tabs, Typography, Image, Carousel, Divider, Badge } from 'antd';
+import { CardDonar, SobreProyecto } from '../components/CardDonar';
 import FormularioDonar from '../components/FormularioDonar';
 
+const contentStyle = {
+    height: '160px',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
+};
 
 export const AccionesProyectos = () => {
     const params = useParams("id")
-    console.log(params);
-    const { data, execute, loading } = useHttpRequest(setting.proyecto_main + params.id, METHOD.GET)
-    console.log(data);
+    const { data=[], execute, loading,loadingComponent } = useHttpRequest(setting.proyecto_main + params.id, METHOD.GET)
+
+
     useEffect(() => {
         execute()
     }, [])
 
     return (
         <>
-            <Row justify="center" >
-                <Card>
-                    <Row>
-                        <Col span={12}>
-                            {
-                                data && <SobreProyecto data={data} />
-                            }
-                        </Col>
-                        <Col span={12} >
-                           <FormularioDonar/>
-                        </Col>
-                    </Row>
-
-                </Card>
-            </Row>
+            {
+                loadingComponent ?
+                    <>
+                        <Space size="middle">
+                            <Spin size="large" />
+                        </Space>
+                    </>
+                    :
+                    <>
+                        <CardDonar proyecto={data} id={params}/>
+                    </>
+            }
 
         </>
     )
