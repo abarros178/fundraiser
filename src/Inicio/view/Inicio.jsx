@@ -1,30 +1,23 @@
-import React, { useEffect } from 'react'
-import { NavBar } from '../../components/NavBar.jsx'
-import { FooterInicio } from '../components/FooterInicio.jsx'
+import React from 'react'
 import { HeaderInicio } from '../components/HeaderInicio.jsx'
 import { ProyectListInicio } from '../../proyecto/components/ProyectListInicio.jsx'
 import { PrincipalProyecto } from '../components/PrincipalProyecto.jsx'
-import { useHttpRequest } from '../../hooks/useHttpRequest.jsx'
 import { METHOD, setting } from '../../settings/Settings.js'
-import { Space, Spin } from 'antd'
+import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo.jsx'
+import { LoaderNeoSoft } from '../../components/LoaderNeoSoft.jsx'
 
 
 const Inicio = () => {
-  const { data, execute,loadingComponent } = useHttpRequest(setting.proyecto_main + "630d0b51dda3b5d4e76a6363", METHOD.GET)
-
-  useEffect(() => {
-    execute()
-  }, [])
+  const { data, loading } = useHttpRequestTwo(setting.proyecto_main + "630d0b51dda3b5d4e76a6363", METHOD.GET)
   return (
     <>
 
+      <HeaderInicio />
       {
-        loadingComponent ?
-          (<Space size="middle">
-            <Spin size="large" />
-          </Space>)
+        loading ?
+          <LoaderNeoSoft />
           :
-          (<><HeaderInicio />
+          (<>
 
 
             <PrincipalProyecto data={data} />

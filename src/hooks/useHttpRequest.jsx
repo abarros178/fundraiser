@@ -2,13 +2,12 @@ import { useState } from "react"
 import Axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 
 
-export const useHttpRequest = (url, method, type) => {
+export const useHttpRequest = (url, method) => {
 
   const [data, setData] = useState(null)
   const [statusCode, setStatusCode] = useState(null)
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [loadingComponent, setLoadingComponent] = useState(true)
   const [message, setMessage] = useState(null)
 
 
@@ -48,9 +47,7 @@ export const useHttpRequest = (url, method, type) => {
       }
     } finally {
       setLoading(false)
-      setLoadingComponent(false)
     }
   }
-  if(type==1)execute()
-  return { data, message, error, statusCode, loading, execute,loadingComponent }
+  return { data, message, error, statusCode, loading, execute }
 }
