@@ -2,7 +2,7 @@ import { useState } from "react"
 import Axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
 
 
-export const useHttpRequest = (url, method) => {
+export const useHttpRequest = (url, method, type) => {
 
   const [data, setData] = useState(null)
   const [statusCode, setStatusCode] = useState(null)
@@ -51,5 +51,6 @@ export const useHttpRequest = (url, method) => {
       setLoadingComponent(false)
     }
   }
+  if(type==1)execute()
   return { data, message, error, statusCode, loading, execute,loadingComponent }
 }

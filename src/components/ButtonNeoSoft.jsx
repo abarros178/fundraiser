@@ -6,7 +6,7 @@ export const ButtonNeoSoft = ({ onClick = () => { }, label, type }) => {
         <>
 
             {
-                type == 1 && <button onClick={onClick} class="mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">{label}</button>
+                type == 1 && <button onClick={onClick} className="mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">{label}</button>
 
             }
 

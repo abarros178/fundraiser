@@ -31,7 +31,7 @@ const FormularioDonar = () => {
             <Row gutter={[16,16]}>
                 <Col span={24}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-                        <label for="Name" style={{
+                        <label htmlFor="Name" style={{
                             lineHeight: "130%", fontSize: "12px", color: "black",
                         }}>Nombre</label>
                         <Input placeholder='Digite el nombre'  />
@@ -40,7 +40,7 @@ const FormularioDonar = () => {
                 </Col>
                 <Col span={24}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-                        <label for="Name" style={{
+                        <label htmlFor="Name" style={{
                             lineHeight: "130%", fontSize: "12px", color: "black",
                         }}>Nombre</label>
                         <Select>
@@ -54,7 +54,7 @@ const FormularioDonar = () => {
                 </Col>
                 <Col span={24}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-                        <label for="Name" style={{
+                        <label htmlFor="Name" style={{
                             lineHeight: "130%", fontSize: "12px", color: "black",
                         }}>Cuanto va a donar</label>
                         <Input type="number" />

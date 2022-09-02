@@ -3,9 +3,9 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FooterInicio } from '../Inicio/components/FooterInicio';
 const { Header, Content } = Layout;
-
 const AppLayout = ({ children }) => {
   const navigate = useNavigate();
+
 
   return (<Layout className="layout">
     <Header>
@@ -13,10 +13,12 @@ const AppLayout = ({ children }) => {
       <Menu
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={['2']}
+        defaultSelectedKeys={['1']}
+        selectable={false}
         items={[{
           label: `Fundacion`,
           onClick: () => navigate('/'),
+          
         },
         {
           label: 'Donar',

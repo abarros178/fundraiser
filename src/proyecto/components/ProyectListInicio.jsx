@@ -21,8 +21,8 @@ export const ProyectListInicio = () => {
                 </div>
                 <div className="flex flex-wrap">
                     {
-                        data?.map((proyecto) => (
-                            <ProyectItem proyecto={proyecto} />
+                        data?.map((proyecto, index) => (
+                            <ProyectItem key={index} proyecto={proyecto} />
                         ))
                     }
                 </div>

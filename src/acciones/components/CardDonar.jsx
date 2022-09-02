@@ -8,10 +8,8 @@ import { useParams } from 'react-router-dom';
 const { Title } = Typography
 
 export const CardDonar = ({ proyecto, id }) => {
-  const { data, execute, loading,loadingComponent } = useHttpRequest(setting.donaciones_main + id, METHOD.GET)
-  useEffect(() => {
-    execute()
-  }, [])
+  const { data, loading } = useHttpRequest(setting.donaciones_main + id, METHOD.GET)
+  console.log(loading);
   return (
     <>
 
@@ -29,7 +27,7 @@ export const CardDonar = ({ proyecto, id }) => {
                 left: "40px"
               }}>{proyecto.title}</Typography.Title>
               {
-                loadingComponent ?
+                loading ?
                   <>
                     <Space size="middle">
                       <Spin size="large" />
