@@ -9,20 +9,29 @@ import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
 
 export const AccionesProyectos = () => {
     const params = useParams("id")
-    const { data = [], loading } = useHttpRequestTwo(setting.proyecto_main + params.id, METHOD.GET)
+    const { data = [], loading, error } = useHttpRequestTwo(setting.proyecto_main + params.id, METHOD.GET)
 
     return (
         <>
+
             {
-                loading ?
-                    <>
-                        <Space size="middle">
-                            <Spin size="large" />
-                        </Space>
-                    </>
+                error ?
+                    <h1>Lo sentimos, ocurrio un problema al cargar la pagina, intentelo de nuevo</h1>
                     :
                     <>
-                        <CardDonar proyecto={data} id={params.id} />
+
+                        {
+                            loading ?
+                                <>
+                                    <Space size="middle">
+                                        <Spin size="large" />
+                                    </Space>
+                                </>
+                                :
+                                <>
+                                    <CardDonar proyecto={data} id={params.id} />
+                                </>
+                        }
                     </>
             }
 

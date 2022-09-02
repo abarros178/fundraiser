@@ -1,4 +1,5 @@
 import {
+    Alert,
     Button,
     Card,
     Cascader,
@@ -16,34 +17,82 @@ import {
 } from 'antd';
 import Title from 'antd/lib/skeleton/Title';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ButtonNeoSoft } from '../../components/ButtonNeoSoft';
+import { useForm } from '../../hooks/useForm';
+import { useHttpRequest } from '../../hooks/useHttpRequest';
+import { METHOD, setting } from '../../settings/Settings';
 
-const FormularioDonar = () => {
-    const [componentSize, setComponentSize] = useState('default');
+const FormularioDonar = ({ proyecto }) => {
 
-    const onFormLayoutChange = ({ size }) => {
-        setComponentSize(size);
-    };
+    const { formState, onInputChange, onResetForm } = useForm({
+        nombre: "",
+        tipo: "",
+        monto_donacion: 0,
+        medio_pago: null
+    })
+    const [exito, setexito] = useState(false)
+    const [fracaso, setfracaso] = useState(false)
+    const navigate =useNavigate()
+    const { execute, loading, error, data } = useHttpRequest(setting.donaciones_main, METHOD.POST)
 
+    const handledDonar = async () => {
+        await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre });
+        if (!error) {
+            setexito(true)
+        } else {
+            setfracaso(true)
+        }
+        onResetForm()
+        setTimeout(() => {
+            navigate('/')
+        }, 3000);
+    }
     return (
 
         <>
-            <Row gutter={[16,16]}>
+            {
+                exito && <Alert
+                    message="Guardado correctamente"
+                    showIcon
+                    type="success"
+                    action={
+                        <Button size="small" danger onClick={() =>setexito(false)}>
+                            x
+                        </Button>
+                    }
+                />
+
+            }
+            {
+                fracaso && <Alert
+                    message="No se puedo registrar su donacion"
+                    showIcon
+                    type="error"
+                    
+                    action={
+                        <Button size="small" danger onClick={() =>setfracaso(false)}onC>
+                            Detail
+                        </Button>
+                    }
+                />
+            }
+            <Row gutter={[16, 16]}>
                 <Col span={24}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-                        <label htmlFor="Name" style={{
+                        <label htmlFor="nombre" style={{
                             lineHeight: "130%", fontSize: "12px", color: "black",
                         }}>Nombre</label>
-                        <Input placeholder='Digite el nombre'  />
-                        <Checkbox>Soy anonimo</Checkbox>
+                        <Input placeholder='Deje vacio para ser anonimo' name='nombre' onChange={onInputChange} value={formState.nombre}/>
+                        {/* <Checkbox>Soy anonimo</Checkbox> */}
                     </div>
                 </Col>
                 <Col span={24}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-                        <label htmlFor="Name" style={{
+                        <label htmlFor="tipo" style={{
                             lineHeight: "130%", fontSize: "12px", color: "black",
-                        }}>Nombre</label>
-                        <Select>
+                        }}>Es usted</label>
+                        <Select value={formState.tipo} onChange={(e) => onInputChange({ target: { value: e, name: 'tipo' } })}>
                             <Select.Option value="graduado">Graduado</Select.Option>
                             <Select.Option value="estudiante">Estudiante</Select.Option>
                             <Select.Option value="profesor">Profesor</Select.Option>
@@ -54,14 +103,30 @@ const FormularioDonar = () => {
                 </Col>
                 <Col span={24}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
-                        <label htmlFor="Name" style={{
+                        <label htmlFor="monto_donacion" style={{
                             lineHeight: "130%", fontSize: "12px", color: "black",
                         }}>Cuanto va a donar</label>
-                        <Input type="number" />
+                        <Input value={formState.monto_donacion} type="number" name='monto_donacion' onChange={onInputChange} />
+
+                    </div>
+                </Col>
+                <Col span={24}>
+                    <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
+                        <label htmlFor="Name" style={{
+                            lineHeight: "130%", fontSize: "12px", color: "black",
+                        }}>Medio de pago</label>
+                        <Select onChange={(e) => onInputChange({ target: { value: e, name: 'medio_pago' } })} value={formState.medio_pago}>
+                            <Select.Option value="Credito">Credito</Select.Option>
+                            <Select.Option value="Nequi">Nequi</Select.Option>
+                            <Select.Option value="Trasnferencia bancaria">Trasnferencia bancaria</Select.Option>
+                            <Select.Option value="Paypal">Paypal</Select.Option>
+                        </Select>
 
                     </div>
                 </Col>
             </Row>
+
+            <Button style={{ margin: "10px 0px" }} type='primary' ghost onClick={handledDonar} loading={loading}>Donar</Button>
         </>
 
         // <Form

@@ -1,15 +1,15 @@
 import { Col, Row, Typography, Divider, Statistic, Space, Spin } from 'antd'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { ArrowUpOutlined } from '@ant-design/icons';
 import FormularioDonar from './FormularioDonar'
 import { METHOD, setting } from '../../settings/Settings';
-import { useHttpRequest } from '../../hooks/useHttpRequest';
-import { useParams } from 'react-router-dom';
-const { Title } = Typography
+import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
+
+
 
 export const CardDonar = ({ proyecto, id }) => {
-  const { data, loading } = useHttpRequest(setting.donaciones_main + id, METHOD.GET)
-  console.log(loading);
+  const { data=[], loading } = useHttpRequestTwo(setting.donaciones_main , METHOD.GET)
+  console.log(data);
   return (
     <>
 
@@ -21,7 +21,7 @@ export const CardDonar = ({ proyecto, id }) => {
             </div>
           </Col>
           <Col xs={24} sm={24} md={10} lg={10} >
-            <div style={{ marginTop: '10px' }}>
+            <div style={{ marginTop: '10px', paddingBottom: '10px' }}>
               <Typography.Title style={{
                 position: "relative",
                 left: "40px"
@@ -41,7 +41,7 @@ export const CardDonar = ({ proyecto, id }) => {
                         left: "40px"
                       }}
                       title="Donaciones"
-                      value={data ? data.lenght : 0}
+                      value={data.length}
                       valueStyle={{ color: '#3f8600' }}
                       prefix={<ArrowUpOutlined />}
                     />
@@ -51,7 +51,7 @@ export const CardDonar = ({ proyecto, id }) => {
             </div>
             <div style={{ padding: '0px 50px', marginBottom: '10px' }}>
               <Divider />
-              <FormularioDonar />
+              <FormularioDonar proyecto={id} />
             </div>
           </Col>
         </Row>
