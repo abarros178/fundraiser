@@ -24,7 +24,7 @@ const Inicio = () => {
                 (<>
 
 
-                  <PrincipalProyecto data={data} />
+                  <PrincipalProyecto data={data} loading />
 
                   <ProyectListInicio />
                   <section className="text-gray-600 body-font">

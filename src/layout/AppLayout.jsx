@@ -22,6 +22,7 @@ const AppLayout = ({ children }) => {
         },
         {
           label: 'Donar',
+          onClick: () => navigate('/donar'),
 
         }, {
           label: 'Acerca de',
