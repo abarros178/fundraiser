@@ -1,24 +1,15 @@
 import {
     Alert,
     Button,
-    Card,
-    Cascader,
-    Checkbox,
     Col,
-    DatePicker,
-    Form,
     Input,
-    InputNumber,
-    Radio,
     Row,
     Select,
-    Switch,
-    TreeSelect,
+    message
 } from 'antd';
-import Title from 'antd/lib/skeleton/Title';
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ButtonNeoSoft } from '../../components/ButtonNeoSoft';
 import { useForm } from '../../hooks/useForm';
 import { useHttpRequest } from '../../hooks/useHttpRequest';
 import { METHOD, setting } from '../../settings/Settings';
@@ -31,59 +22,35 @@ const FormularioDonar = ({ proyecto }) => {
         monto_donacion: 0,
         medio_pago: null
     })
-    const [exito, setexito] = useState(false)
-    const [fracaso, setfracaso] = useState(false)
-    const navigate =useNavigate()
-    const { execute, loading, error, data } = useHttpRequest(setting.donaciones_main, METHOD.POST)
 
+    const navigate = useNavigate()
+    const { execute, loading, error, data } = useHttpRequest(setting.donaciones_main, METHOD.POST)
     const handledDonar = async () => {
-        await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre });
-        if (!error) {
-            setexito(true)
+        await execute({ ...formState, proyecto: "ñ", nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre });
+        if (!data.errors) {
+            console.log("object")
+            return
+        }
+        if (!error  ) {
+            message.success("Se guardo con exito")
         } else {
-            setfracaso(true)
+            message.error("Ocurrio un problema al guardar.",)
         }
         onResetForm()
         setTimeout(() => {
             navigate('/')
-        }, 3000);
+        }, 1000);
     }
     return (
 
         <>
-            {
-                exito && <Alert
-                    message="Guardado correctamente"
-                    showIcon
-                    type="success"
-                    action={
-                        <Button size="small" danger onClick={() =>setexito(false)}>
-                            x
-                        </Button>
-                    }
-                />
-
-            }
-            {
-                fracaso && <Alert
-                    message="No se puedo registrar su donacion"
-                    showIcon
-                    type="error"
-                    
-                    action={
-                        <Button size="small" danger onClick={() =>setfracaso(false)}onC>
-                            Detail
-                        </Button>
-                    }
-                />
-            }
             <Row gutter={[16, 16]}>
                 <Col span={24}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
                         <label htmlFor="nombre" style={{
                             lineHeight: "130%", fontSize: "12px", color: "black",
                         }}>Nombre</label>
-                        <Input placeholder='Deje vacio para ser anonimo' name='nombre' onChange={onInputChange} value={formState.nombre}/>
+                        <Input placeholder='Deje vacio para ser anonimo' name='nombre' onChange={onInputChange} value={formState.nombre} />
                         {/* <Checkbox>Soy anonimo</Checkbox> */}
                     </div>
                 </Col>
