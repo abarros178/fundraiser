@@ -18,7 +18,7 @@ const AppLayout = ({ children }) => {
         items={[{
           label: `Fundacion`,
           onClick: () => navigate('/'),
-          
+
         },
         {
           label: 'Donar',
@@ -40,6 +40,9 @@ const AppLayout = ({ children }) => {
     >
       <div className="site-layout-content">{children}</div>
     </Content>
+    {
+    //todo: ponerle links a los iconos
+    }
     <FooterInicio />
   </Layout>)
 };
