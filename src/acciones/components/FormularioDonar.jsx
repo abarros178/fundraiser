@@ -1,10 +1,5 @@
+import { Box, Button, Divider, Grid, MenuItem, TextField, Typography } from '@mui/material';
 import {
-    Alert,
-    Button,
-    Col,
-    Input,
-    Row,
-    Select,
     message
 } from 'antd';
 
@@ -13,8 +8,45 @@ import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useHttpRequest } from '../../hooks/useHttpRequest';
 import { METHOD, setting } from '../../settings/Settings';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
+const roles = [
+    {
+        value: 'Graduado',
+        label: 'Graduado',
+    },
+    {
+        value: 'Estudiante',
+        label: 'Estudiante',
+    },
+    {
+        value: 'Profesor',
+        label: 'Profesor',
+    },
+    {
+        value: 'Otro',
+        label: 'Otro',
+    },
+];
+
+const medio_pago = [
+    {
+        value: 'Efectivo',
+        label: 'Efectivo',
+    },
+    {
+        value: 'Tarjeta debido',
+        label: 'Tarjeta debido',
+    },
+];
+
 
 const FormularioDonar = ({ proyecto }) => {
+    const [otroMonto, setOtroMonto] = useState(false);
+
+    const handleOtroMonto = () => {
+        setOtroMonto(!otroMonto);
+    };
+
 
     const { formState, onInputChange, onResetForm } = useForm({
         nombre: "",
@@ -44,14 +76,117 @@ const FormularioDonar = ({ proyecto }) => {
     return (
 
         <>
-            <Row gutter={[16, 16]}>
+
+<Grid container>
+            <Grid item xs={12}>
+                <Typography variant="h4" gutterBottom>
+                    Gift amount
+                    <Divider className='w-full bg-black' />
+                </Typography>
+                <Grid container my={3} >
+                    {otroMonto ?
+                        <Grid item mr={2}>
+                            <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+                                <AttachMoneyIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
+                                <TextField id="input-with-sx" label="Otro monto" variant="standard" />
+                                <Button onClick={handleOtroMonto} variant="contained" sx={{ fontSize: '14px' }} >
+                                    X
+                                </Button>
+                            </Box>
+                        </Grid>
+                        :
+                        <>
+                            <Grid item mr={2}>
+                                <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24'>
+                                    $20.000 COP
+                                </Button>
+                            </Grid>
+                            <Grid item mr={2}>
+                                <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24 '>
+                                    $50.000 COP
+                                </Button>
+                            </Grid>
+                            <Grid item mr={2}>
+                                <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24'>
+                                    $80.000 COP
+                                </Button>
+                            </Grid>
+                            <Grid item mr={2}>
+                                <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24'>
+                                    $100.000 COP
+                                </Button>
+                            </Grid>
+                            <Grid item mr={2}>
+                                <Button onClick={handleOtroMonto} variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24'>
+                                    Otro monto
+                                </Button>
+                            </Grid>
+                        </>}
+                </Grid>
+                <Grid item xs={12}>
+                    <Typography variant="h4" gutterBottom>
+                        Donor information
+                        <Divider className='w-full bg-black' />
+                    </Typography>
+                    <form>
+                        <Grid container xs={12} >
+                            <Grid item xs={6} mr={3} >
+                                <TextField name='nombre' onChange={onInputChange} fullWidth id="standard-basic" label="Nombre" variant="standard" />
+                            </Grid>
+                            <Grid item xs={4}>
+                                <TextField
+                                    name='tipo'
+                                    onChange={onInputChange}
+                                    fullWidth
+                                    id="standard-select-currency"
+                                    select
+                                    label="Es usted"
+                                    helperText="Por favor selecciona"
+                                    variant="standard"
+                                >
+                                    {roles.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+                            </Grid>
+                            <Grid item xs={4} mb={2}>
+                                <TextField
+                                    name='medio_pago'
+                                    onChange={onInputChange}
+                                    fullWidth
+                                    id="standard-select-currency"
+                                    select
+                                    label="Medio de pago"
+                                    helperText="Por favor selecciona"
+                                    variant="standard"
+                                >
+                                    {medio_pago.map((option) => (
+                                        <MenuItem key={option.value} value={option.value}>
+                                            {option.label}
+                                        </MenuItem>
+                                    ))}
+                                </TextField>
+                            </Grid>
+                            <Grid item xs={12} >
+                                <Button onClick={handledDonar} loading={loading} variant="contained" size="large">
+                                    Donar
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </form>
+                </Grid>
+            </Grid>
+        </Grid >
+
+            {/* <Row gutter={[16, 16]}>
                 <Col span={24}>
                     <div style={{ width: '100%', display: 'flex', flexDirection: 'column' }}>
                         <label htmlFor="nombre" style={{
                             lineHeight: "130%", fontSize: "12px", color: "black",
                         }}>Nombre</label>
                         <Input placeholder='Deje vacio para ser anonimo' name='nombre' onChange={onInputChange} value={formState.nombre} />
-                        {/* <Checkbox>Soy anonimo</Checkbox> */}
                     </div>
                 </Col>
                 <Col span={24}>
@@ -93,7 +228,7 @@ const FormularioDonar = ({ proyecto }) => {
                 </Col>
             </Row>
 
-            <Button style={{ margin: "10px 0px" }} type='primary' ghost onClick={handledDonar} loading={loading}>Donar</Button>
+            <Button style={{ margin: "10px 0px" }} type='primary' ghost onClick={handledDonar} loading={loading}>Donar</Button> */}
         </>
 
         // <Form
