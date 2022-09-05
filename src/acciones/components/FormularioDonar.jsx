@@ -26,10 +26,9 @@ const FormularioDonar = ({ proyecto }) => {
     const navigate = useNavigate()
     const { execute, loading, error, data } = useHttpRequest(setting.donaciones_main, METHOD.POST)
     const handledDonar = async () => {
-        await execute({ ...formState, proyecto: "ñ", nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre });
-        if (!data.errors) {
-            console.log("object")
-            return
+        await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre });
+        if(data){
+
         }
         if (!error  ) {
             message.success("Se guardo con exito")
