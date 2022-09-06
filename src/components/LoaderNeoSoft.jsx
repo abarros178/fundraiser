@@ -1,11 +1,12 @@
+import { Divider } from '@mui/material'
 import { Space, Spin } from 'antd'
 import React from 'react'
 
 export const LoaderNeoSoft = ({ loading }) => {
     return (
 
-        <Space size="middle" >
+        <div >
             <Spin size="large" />
-        </Space >
+        </div >
     )
 }

@@ -1,4 +1,5 @@
 import { Box, Grid, Typography } from '@mui/material'
+import { Card } from 'antd'
 import React from 'react'
 import FormularioDonar from './FormularioDonar'
 
@@ -9,30 +10,30 @@ import FormularioDonar from './FormularioDonar'
 export const CardDonar = ({ proyecto, id }) => {
   return (
     <>
-            <Box sx={{ width: '100%' }}>
-            <Grid container rowSpacing={1} justifyContent="center"  >
-                <Grid item xs={12}>
-                    <Box className={`w-full h-96  bg-no-repeat bg-center`} style={{backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/donaciones-79b72.appspot.com/o/Proyecto1.jpg?alt=media&token=5354ee10-4d1f-4246-8eb4-c7d5b9ad49b0)`}}>
-                    </Box>
-                </Grid>
-                <Grid container xs={8} my={5} >
-                    <Grid item xs={12} >
-                        <Typography variant="h2" mb={4} gutterBottom>
-                        {proyecto.title}
-                        </Typography>
-                        <Typography variant="subtitle1" >
-                          {proyecto.descripcion}
-                        </Typography>
-                    </Grid>
-                </Grid>
-                <Grid item xs={8}>
-                    <FormularioDonar proyecto={id} />
-                </Grid>
+      <Box sx={{ width: '100%' }}>
+        <Grid container rowSpacing={1} justifyContent="center"  >
+          <Grid item xs={12}>
+            <Box className={`w-full h-96  bg-no-repeat bg-center`} style={{ backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/donaciones-79b72.appspot.com/o/Proyecto1.jpg?alt=media&token=5354ee10-4d1f-4246-8eb4-c7d5b9ad49b0)` }}>
+            </Box>
+          </Grid>
+          <Grid container xs={8} my={5} >
+            <Grid item xs={12} >
+              <Typography variant="h2" mb={4} gutterBottom>
+                {proyecto.title}
+              </Typography>
+              <Typography variant="subtitle1" >
+                {proyecto.descripcion}
+              </Typography>
             </Grid>
-        </Box>
+          </Grid>
+          <Grid item xs={8}>
+            <FormularioDonar proyecto={id} />
+          </Grid>
+        </Grid>
+      </Box>
 
 
-{/* 
+      {/* 
       <div style={{ backgroundColor: 'white', borderTopLeftRadius: "25px"}}>
         <Row >
           <Col xs={24} sm={24} md={10} lg={10} >
