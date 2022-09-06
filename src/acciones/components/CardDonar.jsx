@@ -1,9 +1,7 @@
 import { Box, Grid, Typography } from '@mui/material'
 import React from 'react'
-import { ArrowUpOutlined } from '@ant-design/icons';
 import FormularioDonar from './FormularioDonar'
-import { METHOD, setting } from '../../settings/Settings';
-import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
+
 
 
 
@@ -14,7 +12,7 @@ export const CardDonar = ({ proyecto, id }) => {
             <Box sx={{ width: '100%' }}>
             <Grid container rowSpacing={1} justifyContent="center"  >
                 <Grid item xs={12}>
-                    <Box className="w-full h-96 bg-[url('https://www.cuc.edu.co/wp-content/uploads/2021/07/se-parte-familia-unicosta-estudiantes.jpg')] bg-no-repeat bg-center">
+                    <Box className={`w-full h-96  bg-no-repeat bg-center`} style={{backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/donaciones-79b72.appspot.com/o/Proyecto1.jpg?alt=media&token=5354ee10-4d1f-4246-8eb4-c7d5b9ad49b0)`}}>
                     </Box>
                 </Grid>
                 <Grid container xs={8} my={5} >

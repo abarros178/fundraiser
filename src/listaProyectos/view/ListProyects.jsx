@@ -3,27 +3,30 @@ import React from 'react'
 import { LoaderNeoSoft } from '../../components/LoaderNeoSoft'
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo'
 import { METHOD, setting } from '../../settings/Settings'
+import ItemPrueba from '../components/Item'
 import { ProyectoItemDonar } from '../components/ProyectoItemDonar'
 export const ListProyects = () => {
 
     const { data = [], loading } = useHttpRequestTwo(setting.proyecto_main, METHOD.GET)
 
     return (
-        <Row style={{ display: 'flex' }} gutter={16}>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
             {
-                loading ? <LoaderNeoSoft />
+                loading ? <div style={{ position: 'relative', right: 0, bottom: 0, left: 0, top: 0 }}>
+                    <LoaderNeoSoft />
+                </div>
                     :
                     <>
                         {
                             data.map((item, index) => (
-                                <Col span={12}>
-                                    <ProyectoItemDonar key={index} data={item} />
-                                </Col>
+                                <div style={{ margin: 5 }}>
+                                    <ItemPrueba key={index} data={item} />
+                                </div>
                             ))
                         }
                     </>
             }
-        </Row>
+        </div>
     )
 }
 
