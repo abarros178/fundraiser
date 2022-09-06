@@ -57,17 +57,21 @@ const FormularioDonar = ({ proyecto }) => {
     const navigate = useNavigate()
     const { execute, loading, error, data, statusCode } = useHttpRequest(setting.donaciones_main, METHOD.POST)
     const handledDonar = async () => {
-        await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre});
-        console.log(statusCode)
-        if (statusCode === 201) {
-            message.success("Se guardo con exito")
-            onResetForm()
-            setTimeout(() => {
-                navigate('/')
-            }, 1000);
-        } else {
-            message.error("Ocurrio un problema al guardar.",)
-        }
+        execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre })
+            .then(() => {
+                if (statusCode === 201) {
+                    message.success("Se guardo con exito")
+                    onResetForm()
+                    setTimeout(() => {
+                        navigate('/')
+                    }, 1000);
+                } else {
+                    message.error("Ocurrio un problema al guardar.",)
+                }
+            }).catch(() => {
+                message.error("Ocurrio un problema al guardar.",)
+            });
+
 
     }
     return (
@@ -98,23 +102,23 @@ const FormularioDonar = ({ proyecto }) => {
                                         variant="contained"
                                         sx={{ fontSize: '18px' }}
                                         className='w-28 h-24'
-                                        onClick={() => onInputChange({target:{value:20000,name:'monto_donacion'}})}
-                                        >
+                                        onClick={() => onInputChange({ target: { value: 20000, name: 'monto_donacion' } })}
+                                    >
                                         $20.000 COP
                                     </Button>
                                 </Grid>
                                 <Grid item mr={2}>
-                                    <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24 '  onClick={() => onInputChange({target:{value:50000,name:'monto_donacion'}})}>
+                                    <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24 ' onClick={() => onInputChange({ target: { value: 50000, name: 'monto_donacion' } })}>
                                         $50.000 COP
                                     </Button>
                                 </Grid>
                                 <Grid item mr={2}>
-                                    <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24' onClick={() => onInputChange({target:{value:80000,name:'monto_donacion'}})}>
+                                    <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24' onClick={() => onInputChange({ target: { value: 80000, name: 'monto_donacion' } })}>
                                         $80.000 COP
                                     </Button>
                                 </Grid>
                                 <Grid item mr={2}>
-                                    <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24' onClick={() => onInputChange({target:{value:100000,name:'monto_donacion'}})}>
+                                    <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24' onClick={() => onInputChange({ target: { value: 100000, name: 'monto_donacion' } })}>
                                         $100.000 COP
                                     </Button>
                                 </Grid>
