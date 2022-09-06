@@ -14,7 +14,12 @@ export const ProyectListInicio = () => {
         <>
 
             {
-                loading ? <LoaderNeoSoft />
+                loading ?
+
+                    <div style={{ position: 'relative', right: 0, bottom: 0, left: 0, top: 0 }}>
+                        <LoaderNeoSoft />
+                    </div>
+                    
                     : (<section className="text-gray-600 bg-gray-100 body-font">
                         <div className="container px-5 py-24 mx-auto">
                             <div className="flex flex-col text-center w-full mb-20">

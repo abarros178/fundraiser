@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Space, Spin } from 'antd';
 import { CardDonar } from '../components/CardDonar';
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
+import { LoaderNeoSoft } from '../../components/LoaderNeoSoft';
 
 
 
@@ -23,9 +24,9 @@ export const AccionesProyectos = () => {
                         {
                             loading ?
                                 <>
-                                    <Space size="middle">
-                                        <Spin size="large" />
-                                    </Space>
+                                    <div style={{ position: 'relative', right: 0, bottom: 0, left: 0, top: 0 }}>
+                                        <LoaderNeoSoft />
+                                    </div>
                                 </>
                                 :
                                 <>
