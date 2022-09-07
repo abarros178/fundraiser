@@ -5,10 +5,9 @@ import { carrousel } from '../utils/Datos'
 import { CarrouselItem } from './CarrouselItem.jsx'
 
 export const HeaderInicio = ({ height = '600px' }) => {
-    console.log(carrousel)
     return (
         <>
-            <Carousel autoplay >
+            <Carousel autoplay>
                 {
                     carrousel.map((img,index) => (
                         <CarrouselItem height={height} img={img} key={index}/>

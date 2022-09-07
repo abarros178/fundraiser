@@ -29,7 +29,7 @@ const Inicio = () => {
 
                   <PrincipalProyecto data={data} loading />
 
-                  <ProyectListInicio />
+                  {/* <ProyectListInicio /> */}
                   <AboutUs />
                 </>)
 
