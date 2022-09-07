@@ -1,7 +1,6 @@
 import React from 'react'
 import { METHOD, setting } from '../../settings/Settings'
 import { useParams } from 'react-router-dom';
-import { Space, Spin } from 'antd';
 import { CardDonar } from '../components/CardDonar';
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
 import { LoaderNeoSoft } from '../../components/LoaderNeoSoft';
@@ -24,9 +23,8 @@ export const AccionesProyectos = () => {
                         {
                             loading ?
                                 <>
-                                    <div style={{ position: 'relative', right: 0, bottom: 0, left: 0, top: 0 }}>
-                                        <LoaderNeoSoft />
-                                    </div>
+                                    <LoaderNeoSoft />
+
                                 </>
                                 :
                                 <>

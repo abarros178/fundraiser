@@ -13,7 +13,7 @@ export const CardDonar = ({ proyecto, id }) => {
       <Box sx={{ width: '100%' }}>
         <Grid container rowSpacing={1} justifyContent="center"  >
           <Grid item xs={12}>
-            <Box className={`w-full h-96  bg-no-repeat bg-center`} style={{ backgroundImage: `url(https://firebasestorage.googleapis.com/v0/b/donaciones-79b72.appspot.com/o/Proyecto1.jpg?alt=media&token=5354ee10-4d1f-4246-8eb4-c7d5b9ad49b0)` }}>
+            <Box className={`w-full h-96  bg-no-repeat bg-center`} style={{ backgroundImage: `url(${proyecto.img})` }}>
             </Box>
           </Grid>
           <Grid container xs={8} my={5} >

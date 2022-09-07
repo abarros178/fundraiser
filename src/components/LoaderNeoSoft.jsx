@@ -4,9 +4,9 @@ import React from 'react'
 
 export const LoaderNeoSoft = ({ loading }) => {
     return (
-
-        <div >
+        <div style={{ alignItems: 'center', display: 'flex' }}>
             <Spin size="large" />
-        </div >
+        </div>
+
     )
 }

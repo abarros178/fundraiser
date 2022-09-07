@@ -20,7 +20,7 @@ export default function ProyectoItemDonar({ loading, data }) {
         component="img"
         alt="image"
         height="140"
-        image={data.img}
+        image={data.other?.img_v}
         onClick={() => navigate('/donar/proyecto/' + data.uid)}
         
       />

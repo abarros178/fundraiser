@@ -1,43 +1,12 @@
-import { Box, Button, Divider, Grid, MenuItem, TextField, Typography } from '@mui/material';
-import {
-    message
-} from 'antd';
-
 import React, { useState } from 'react';
+import { Box, Button, Divider, Grid, MenuItem, TextField, Typography } from '@mui/material';
+import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useForm } from '../../hooks/useForm';
 import { useHttpRequest } from '../../hooks/useHttpRequest';
 import { METHOD, setting } from '../../settings/Settings';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-const roles = [
-    {
-        value: 'Graduado',
-        label: 'Graduado',
-    },
-    {
-        value: 'Estudiante',
-        label: 'Estudiante',
-    },
-    {
-        value: 'Profesor',
-        label: 'Profesor',
-    },
-    {
-        value: 'Otro',
-        label: 'Otro',
-    },
-];
-
-const medio_pago = [
-    {
-        value: 'Efectivo',
-        label: 'Efectivo',
-    },
-    {
-        value: 'Tarjeta debido',
-        label: 'Tarjeta debido',
-    },
-];
+import { medio_pago, roles } from '../utils/select';
 
 
 const FormularioDonar = ({ proyecto }) => {
@@ -45,7 +14,6 @@ const FormularioDonar = ({ proyecto }) => {
     const handleOtroMonto = () => {
         setOtroMonto(!otroMonto);
     };
-
 
     const { formState, onInputChange, onResetForm } = useForm({
         nombre: "",
@@ -56,22 +24,19 @@ const FormularioDonar = ({ proyecto }) => {
 
     const navigate = useNavigate()
     const { execute, loading, error, data, statusCode } = useHttpRequest(setting.donaciones_main, METHOD.POST)
-    const handledDonar = async () => {
-        execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre })
-            .then(() => {
-                if (statusCode === 201) {
-                    message.success("Se guardo con exito")
-                    onResetForm()
-                    setTimeout(() => {
-                        navigate('/')
-                    }, 1000);
-                } else {
-                    message.error("Ocurrio un problema al guardar.",)
-                }
-            }).catch(() => {
-                message.error("Ocurrio un problema al guardar.",)
-            });
 
+    const handledDonar = async () => {
+        const res = await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre })
+        console.log(res)
+        if (res.statusCode === 201) {
+            message.success("Se guardo con exito")
+            onResetForm()
+            setTimeout(() => {
+                navigate('/')
+            }, 1000);
+        } else {
+            message.error("Ocurrio un problema al guardar.",)
+        }
 
     }
     return (
