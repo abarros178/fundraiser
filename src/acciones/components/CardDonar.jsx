@@ -8,6 +8,7 @@ import FormularioDonar from './FormularioDonar'
 
 
 export const CardDonar = ({ proyecto, id }) => {
+  //todo: Realizar loader al banner con skeleton
   return (
     <>
       <Box sx={{ width: '100%' }}>

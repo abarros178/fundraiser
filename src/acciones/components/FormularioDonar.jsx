@@ -10,6 +10,7 @@ import { medio_pago, roles } from '../utils/select';
 
 
 const FormularioDonar = ({ proyecto }) => {
+    //todo: Realizar validaciones de formulario, bloquear boton al gurdar
     const [otroMonto, setOtroMonto] = useState(false);
     const handleOtroMonto = () => {
         setOtroMonto(!otroMonto);
