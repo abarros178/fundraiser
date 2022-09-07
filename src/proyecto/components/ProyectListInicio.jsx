@@ -21,27 +21,10 @@ export const ProyectListInicio = () => {
                     </div>
 
                     : <>
-                        {/* <section className="plans-container--slider">
-                            {
-                                data?.map((proyecto, index) => (
-                                    <ProyectItem key={index} proyecto={proyecto} />
-                                ))
-                            }
-                        </section>
-                        <section className="botones">
-                            <button className="scroll-button" onclick="scrollLeftNx()" id="bLess">Atras</button>
-                            <button className="scroll-button" onclick="scrollRightNx()" id="bMore">Siguiente</button>
-                        </section>
-
-                        <a href="/proyectos" className="text-indigo-500 border-t-4 mb-1" >
-                            <center>
-                                Ver todos los proyectos
-                            </center>
-                        </a> */}
                         <Carousel
-                            next={(next, active) => console.log(`we left ${active}, and are now at ${next}`)}
-                            prev={(prev, active) => console.log(`we left ${active}, and are now at ${prev}`)}
-                            
+                            autoPlay={false}
+                            stopAutoPlayOnHover
+                            height="400px"
                         >
                             {
                                 data?.map((proyecto, index) => (

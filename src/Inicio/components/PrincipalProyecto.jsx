@@ -24,12 +24,8 @@ export const PrincipalProyecto = ({ data }) => {
                         src="https://firebasestorage.googleapis.com/v0/b/donaciones-79b72.appspot.com/o/chico_agradecido.jpg?alt=media&token=fea79837-14d5-4e81-87f9-eb0fab939a3e" />
 
                 </Grid>
-                <Grid item xs={12} md={3}>
+                <Grid item xs={12} md={6}>
                     <ProyectListInicio />
-                    <Box style={{ height: '100%', width: '100%' }}>
-                        <Box style={{ margin: "0px auto" }}>
-                        </Box>
-                    </Box>
                 </Grid>
             </Grid>
         </Container>
