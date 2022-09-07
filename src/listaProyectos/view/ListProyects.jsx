@@ -23,7 +23,7 @@ export const ListProyects = () => {
                     <LoaderNeoSoft />
                 </div>
                     :
-                    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: "space-between" }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: "flex-start" }}>
                         <>
                             {
                                 data.map((item, index) => (
