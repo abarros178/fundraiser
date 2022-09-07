@@ -13,8 +13,7 @@ export const CardDonar = ({ proyecto, id }) => {
       <Box sx={{ width: '100%' }}>
         <Grid container rowSpacing={1} justifyContent="center"  >
           <Grid item xs={12}>
-            <Box className={`w-full h-96  bg-no-repeat bg-center`} style={{ backgroundImage: `url(${proyecto.img})` }}>
-            </Box>
+            <img src={proyecto.img} />
           </Grid>
           <Grid container xs={8} my={5} >
             <Grid item xs={12} >
