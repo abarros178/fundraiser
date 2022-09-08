@@ -1,9 +1,9 @@
 import React from 'react'
 import { METHOD, setting } from '../../settings/Settings'
 import { useParams } from 'react-router-dom';
-import { Space, Spin } from 'antd';
 import { CardDonar } from '../components/CardDonar';
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
+import { LoaderNeoSoft } from '../../components/LoaderNeoSoft';
 
 
 
@@ -23,9 +23,8 @@ export const AccionesProyectos = () => {
                         {
                             loading ?
                                 <>
-                                    <Space size="middle">
-                                        <Spin size="large" />
-                                    </Space>
+                                    <LoaderNeoSoft />
+
                                 </>
                                 :
                                 <>

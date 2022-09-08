@@ -1,31 +1,31 @@
-import { Spin } from 'antd';
-import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom';
-import { ButtonNeoSoft } from '../../components/ButtonNeoSoft';
-import { useHttpRequest } from '../../hooks/useHttpRequest';
-import { METHOD, setting } from '../../settings/Settings';
+import { Container, Grid, Typography } from '@mui/material';
+import React from 'react'
+import { ProyectListInicio } from '../../proyecto/components/ProyectListInicio';
 
 export const PrincipalProyecto = ({ data }) => {
-    const navigate = useNavigate()
 
 
     return (
-        <section className="text-gray-600 body-font ">
-            <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
 
-                <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
-                    <img className="object-cover object-center rounded" alt="hero" src={data?.img !== "none" ? data.img : "https://www.cuc.edu.co/wp-content/uploads/2021/07/se-parte-familia-unicosta-estudiantes.jpg"} />
-                </div>
-                <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-                    <h1 className="title-font font-mono sm:text-7xl text-3xl mb-4 font-medium text-gray-900">{data?.title}
-                    </h1>
-                    <p className="mb-8 leading-relaxed">{data?.descripcion}</p>
-                    <div className="flex justify-center">
-                        <ButtonNeoSoft label={"Dona aqui"} type="1" onClick={() => navigate("/donar/proyecto/" + data.uid)} />
+        <Container style={{ marginTop: '100px' }}>
+            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+                <Grid item xs={12}>
+                    <Typography variant="h3" gutterBottom >
+                        CONOCE TODAS NUESTRAS CAMPAÑAS AQUÍ
+                    </Typography>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <img
+                        className="object-cover object-center rounded"
+                        alt="hero"
+                        style={{ minHeight: "400px" }}
+                        src="https://firebasestorage.googleapis.com/v0/b/donaciones-79b72.appspot.com/o/chico_agradecido.jpg?alt=media&token=fea79837-14d5-4e81-87f9-eb0fab939a3e" />
 
-                    </div>
-                </div>
-            </div>
-        </section>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                    <ProyectListInicio />
+                </Grid>
+            </Grid>
+        </Container>
     )
 }

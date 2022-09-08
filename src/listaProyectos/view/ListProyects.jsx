@@ -1,29 +1,41 @@
-import { Col, Row, Space } from 'antd'
 import React from 'react'
+import { Card, CardContent, Typography } from '@mui/material'
 import { LoaderNeoSoft } from '../../components/LoaderNeoSoft'
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo'
 import { METHOD, setting } from '../../settings/Settings'
-import { ProyectoItemDonar } from '../components/ProyectoItemDonar'
+import  ProyectoItemDonar  from '../components/ProyectoItemDonar'
 export const ListProyects = () => {
 
     const { data = [], loading } = useHttpRequestTwo(setting.proyecto_main, METHOD.GET)
 
     return (
-        <Row style={{ display: 'flex' }} gutter={16}>
+        <>
+            <Card style={{ borderRadius: '5px', marginBottom: '10px', boxShadow: '5px gray solid' }}>
+                <CardContent>
+                    <Typography variant='h5'>
+                        Proyectos
+                    </Typography>
+                </CardContent>
+            </Card>
+
             {
-                loading ? <LoaderNeoSoft />
+                loading ? <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: "space-between" }}>
+                    <LoaderNeoSoft />
+                </div>
                     :
-                    <>
-                        {
-                            data.map((item, index) => (
-                                <Col span={12}>
-                                    <ProyectoItemDonar key={index} data={item} />
-                                </Col>
-                            ))
-                        }
-                    </>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: "flex-start" }}>
+                        <>
+                            {
+                                data.map((item, index) => (
+                                    <div style={{ margin: 5 }} key={index}>
+                                        <ProyectoItemDonar  data={item} />
+                                    </div>
+                                ))
+                            }
+                        </>
+                    </div>
             }
-        </Row>
+        </>
     )
 }
 

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import {
     Routes,
     Route,
@@ -17,8 +17,8 @@ export const AppRouter = () => {
             <Routes>
                 <Route path="/" element={<Inicio />} />
                 <Route path="/proyecto" element={<ProyectoView />} />
-                <Route path="/donar/proyecto/:id" element={<AccionesProyectos />} />
                 <Route path="/donar" element={<ListProyects />} />
+                <Route path="/donar/proyecto/:id" element={<AccionesProyectos />} />
             </Routes>
         </>
     )

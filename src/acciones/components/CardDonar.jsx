@@ -1,17 +1,40 @@
-import { Col, Row, Typography, Divider, Statistic, Space, Spin } from 'antd'
+import { Box, Grid, Toolbar, Typography } from '@mui/material'
 import React from 'react'
-import { ArrowUpOutlined } from '@ant-design/icons';
 import FormularioDonar from './FormularioDonar'
-import { METHOD, setting } from '../../settings/Settings';
-import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
+
+
 
 
 
 export const CardDonar = ({ proyecto, id }) => {
+  //todo: Realizar loader al banner con skeleton
   return (
     <>
+      <Box sx={{ width: '100%' }}>
+        <Grid container rowSpacing={1} justifyContent="center"  >
+          <Grid >
+            <img src={proyecto.img} alt="img" loading=''/>
+          </Grid>
+          <Grid >
+            <Toolbar/>
+            <Grid item xs={12} >
+              <Typography variant="h2" mb={4} gutterBottom>
+                {proyecto.title}
+              </Typography>
+              <Typography variant="subtitle1" >
+                {proyecto.descripcion}
+              </Typography>
+            </Grid>
+          </Grid>
+          <Toolbar/>
+          <Grid item xs={8}>
+            <FormularioDonar proyecto={id} />
+          </Grid>
+        </Grid>
+      </Box>
 
 
+      {/* 
       <div style={{ backgroundColor: 'white', borderTopLeftRadius: "25px"}}>
         <Row >
           <Col xs={24} sm={24} md={10} lg={10} >
@@ -30,7 +53,7 @@ export const CardDonar = ({ proyecto, id }) => {
             </div>
           </Col>
         </Row>
-      </div>
+      </div> */}
     </>
 
   )
