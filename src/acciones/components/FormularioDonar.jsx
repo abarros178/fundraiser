@@ -8,6 +8,7 @@ import { METHOD, setting } from '../../settings/Settings';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { medio_pago, roles } from '../utils/select';
 import "../acciones.css"
+import { formularioDonarValidation } from '../utils/validation';
 
 
 const FormularioDonar = ({ proyecto }) => {
@@ -30,14 +31,12 @@ const FormularioDonar = ({ proyecto }) => {
 
 
     const handledDonar = async () => {
+        if (!formularioDonarValidation(formState)) return
         const res = await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre })
-        console.log(res)
         if (res.statusCode === 201) {
             message.success("Se guardo con exito")
             onResetForm()
-            setTimeout(() => {
-                navigate('/')
-            }, 1000);
+            navigate('/')
         } else {
             message.error("Ocurrio un problema al guardar.",)
         }
