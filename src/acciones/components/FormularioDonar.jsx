@@ -7,24 +7,27 @@ import { useHttpRequest } from '../../hooks/useHttpRequest';
 import { METHOD, setting } from '../../settings/Settings';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import { medio_pago, roles } from '../utils/select';
+import "../acciones.css"
 
 
 const FormularioDonar = ({ proyecto }) => {
     //todo: Realizar validaciones de formulario, bloquear boton al gurdar
-    const [otroMonto, setOtroMonto] = useState(false);
-    const handleOtroMonto = () => {
-        setOtroMonto(!otroMonto);
-    };
-
     const { formState, onInputChange, onResetForm } = useForm({
         nombre: "",
         tipo: "",
         monto_donacion: 0,
         medio_pago: ""
     })
-
-    const navigate = useNavigate()
     const { execute, loading, error, data, statusCode } = useHttpRequest(setting.donaciones_main, METHOD.POST)
+    const navigate = useNavigate()
+    const [otroMonto, setOtroMonto] = useState(false);
+    const [activeBoton, setactiveBoton] = useState({ uno: false, dos: false, tres: false, cuatro: false })
+    const handleOtroMonto = () => {
+        setactiveBoton({ uno: false, dos: false, tres: false, cuatro: false })
+        setOtroMonto(!otroMonto);
+        onInputChange({ target: { value: 0, name: 'monto_donacion' } })
+    };
+
 
     const handledDonar = async () => {
         const res = await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre })
@@ -64,27 +67,54 @@ const FormularioDonar = ({ proyecto }) => {
                             :
                             <>
                                 <Grid item mr={2}>
+
                                     <Button
                                         variant="contained"
                                         sx={{ fontSize: '18px' }}
-                                        className='w-28 h-24'
-                                        onClick={() => onInputChange({ target: { value: 20000, name: 'monto_donacion' } })}
+                                        className={`w-28 h-24  ${activeBoton.uno ? "activeluis" : ""}`}
+                                        onClick={() => {
+                                            onInputChange({ target: { value: 20000, name: 'monto_donacion' } })
+                                            setactiveBoton({ uno: true, dos: false, tres: false, cuatro: false })
+                                        }}
+
                                     >
                                         $20.000 COP
                                     </Button>
+
                                 </Grid>
                                 <Grid item mr={2}>
-                                    <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24 ' onClick={() => onInputChange({ target: { value: 50000, name: 'monto_donacion' } })}>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ fontSize: '18px' }}
+                                        className={`w-28 h-24 ${activeBoton.dos && "activeluis"}`}
+                                        onClick={() => {
+                                            onInputChange({ target: { value: 50000, name: 'monto_donacion' } })
+                                            setactiveBoton({ uno: false, dos: true, tres: false, cuatro: false })
+                                        }}>
                                         $50.000 COP
                                     </Button>
                                 </Grid>
                                 <Grid item mr={2}>
-                                    <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24' onClick={() => onInputChange({ target: { value: 80000, name: 'monto_donacion' } })}>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ fontSize: '18px' }}
+                                        className={`w-28 h-24 ${activeBoton.tres && "activeluis"}`}
+                                        onClick={() => {
+                                            onInputChange({ target: { value: 80000, name: 'monto_donacion' } })
+                                            setactiveBoton({ uno: false, dos: false, tres: true, cuatro: false })
+                                        }}>
                                         $80.000 COP
                                     </Button>
                                 </Grid>
                                 <Grid item mr={2}>
-                                    <Button variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24' onClick={() => onInputChange({ target: { value: 100000, name: 'monto_donacion' } })}>
+                                    <Button
+                                        variant="contained"
+                                        sx={{ fontSize: '18px' }}
+                                        className={`w-28 h-24 ${activeBoton.cuatro && "activeluis"}`}
+                                        onClick={() => {
+                                            onInputChange({ target: { value: 100000, name: 'monto_donacion' } })
+                                            setactiveBoton({ uno: false, dos: false, tres: false, cuatro: true })
+                                        }}>
                                         $100.000 COP
                                     </Button>
                                 </Grid>
@@ -144,7 +174,7 @@ const FormularioDonar = ({ proyecto }) => {
                                     </TextField>
                                 </Grid>
                                 <Grid item xs={12} >
-                                    <Button onClick={handledDonar} loading={loading} variant="contained" size="large">
+                                    <Button onClick={handledDonar} variant="contained" size="large" disabled={loading}>
                                         Donar
                                     </Button>
                                 </Grid>

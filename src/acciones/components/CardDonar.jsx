@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Box, Grid, Skeleton, Stack, Typography } from '@mui/material'
 import React from 'react'
 import FormularioDonar from './FormularioDonar'
 
@@ -12,8 +12,8 @@ export const CardDonar = ({ proyecto, id }) => {
     <>
       <Box sx={{ width: '100%' }}>
         <Grid container rowSpacing={1} justifyContent="center"  >
-          <Grid item xs={12}>
-            <img src={proyecto.img} alt="img"/>
+          <Grid item spacing={12}>
+            <img src={proyecto.img} alt="img" />
           </Grid>
           <Grid container xs={8} my={5} >
             <Grid item xs={12} >
