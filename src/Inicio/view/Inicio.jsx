@@ -23,9 +23,10 @@ const Inicio = () => {
                 <LoaderNeoSoft />
                 :
                 (<>
-
+                  
 
                   <PrincipalProyecto data={data} loading />
+
 
                   <AboutUs />
                 </>)
