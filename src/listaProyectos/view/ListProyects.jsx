@@ -27,8 +27,8 @@ export const ListProyects = () => {
                         <>
                             {
                                 data.map((item, index) => (
-                                    <div style={{ margin: 5 }}>
-                                        <ProyectoItemDonar key={index} data={item} />
+                                    <div style={{ margin: 5 }} key={index}>
+                                        <ProyectoItemDonar  data={item} />
                                     </div>
                                 ))
                             }

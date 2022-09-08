@@ -1,6 +1,5 @@
 import React from 'react'
 export const CarrouselItem = ({ height, img }) => {
-    console.log(img)
     return (
         <>
             <div style={{ position: 'relative', display: 'inline-block'}}>

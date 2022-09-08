@@ -34,6 +34,7 @@ const FormularioDonar = ({ proyecto }) => {
         if (!formularioDonarValidation(formState)) return
         const res = await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre })
         if (res.statusCode === 201) {
+            console.log(res.data);
             message.success("Se guardo con exito")
             onResetForm()
             navigate('/')
@@ -69,8 +70,8 @@ const FormularioDonar = ({ proyecto }) => {
 
                                     <Button
                                         variant="contained"
-                                        sx={{ fontSize: '18px' }}
-                                        className={`w-28 h-24  ${activeBoton.uno ? "activeluis" : ""}`}
+                                        sx={activeBoton.uno ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 20000, name: 'monto_donacion' } })
                                             setactiveBoton({ uno: true, dos: false, tres: false, cuatro: false })
@@ -84,8 +85,8 @@ const FormularioDonar = ({ proyecto }) => {
                                 <Grid item mr={2}>
                                     <Button
                                         variant="contained"
-                                        sx={{ fontSize: '18px' }}
-                                        className={`w-28 h-24 ${activeBoton.dos && "activeluis"}`}
+                                        sx={activeBoton.dos ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 50000, name: 'monto_donacion' } })
                                             setactiveBoton({ uno: false, dos: true, tres: false, cuatro: false })
@@ -96,8 +97,8 @@ const FormularioDonar = ({ proyecto }) => {
                                 <Grid item mr={2}>
                                     <Button
                                         variant="contained"
-                                        sx={{ fontSize: '18px' }}
-                                        className={`w-28 h-24 ${activeBoton.tres && "activeluis"}`}
+                                        sx={activeBoton.tres ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 80000, name: 'monto_donacion' } })
                                             setactiveBoton({ uno: false, dos: false, tres: true, cuatro: false })
@@ -108,8 +109,8 @@ const FormularioDonar = ({ proyecto }) => {
                                 <Grid item mr={2}>
                                     <Button
                                         variant="contained"
-                                        sx={{ fontSize: '18px' }}
-                                        className={`w-28 h-24 ${activeBoton.cuatro && "activeluis"}`}
+                                        sx={activeBoton.cuatro ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 100000, name: 'monto_donacion' } })
                                             setactiveBoton({ uno: false, dos: false, tres: false, cuatro: true })
@@ -130,7 +131,7 @@ const FormularioDonar = ({ proyecto }) => {
                             <Divider className='w-full bg-black' />
                         </Typography>
                         <form>
-                            <Grid container xs={12} >
+                            <Grid container >
                                 <Grid item xs={6} mr={3} >
                                     <TextField name='nombre' onChange={onInputChange} value={formState.nombre} fullWidth id="standard-basic" label="Nombre" variant="standard" />
                                 </Grid>
