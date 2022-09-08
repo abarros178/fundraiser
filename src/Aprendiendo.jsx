@@ -11,7 +11,7 @@ export const Aprendiendo = () => {
                     <Typography sx={{
                        margin: "0px auto"
                     }}>
-                        holaa
+                        En timecuc trabajamos para que los estudiantes de nuestra institución puedan graduarse oportunamente
                     </Typography>
                 </Box>
             </Box>
