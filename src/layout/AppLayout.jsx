@@ -19,11 +19,12 @@ const AppLayout = ({ children }) => {
           label: `Fundacion`,
           onClick: () => navigate('/'),
 
+          
         },
         {
           label: 'Proyectos',
           onClick: () => navigate('/donar'),
-
+          
         }, {
           label: 'Acerca de',
           style: { position: 'relative', right: '0px' }
