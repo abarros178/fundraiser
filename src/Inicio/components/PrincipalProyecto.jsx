@@ -1,4 +1,4 @@
-import { Box, Button, Container, Divider, Grid, MenuItem, TextField, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { ProyectListInicio } from '../../proyecto/components/ProyectListInicio';
@@ -11,7 +11,7 @@ export const PrincipalProyecto = ({ data }) => {
 
         <Container style={{ marginTop: '100px' }}>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
-                <Grid item spacing={12}>
+                <Grid item xs={12}>
                     <Typography variant="h3" gutterBottom >
                         CONOCE TODAS NUESTRAS CAMPAÑAS AQUÍ
                     </Typography>

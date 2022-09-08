@@ -9,8 +9,8 @@ export const AboutUs = () => {
                 <div className="container px-5 py-24 mx-auto">
                     <div className="flex flex-wrap -m-4">
                         {
-                            personas.map(persona =>(
-                                <AboutMe data={persona}/>
+                            personas.map((persona,index) =>(
+                                <AboutMe data={persona} key={index}/>
                             ))
                         }
                     </div>

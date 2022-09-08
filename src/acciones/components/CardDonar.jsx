@@ -26,6 +26,7 @@ export const CardDonar = ({ proyecto, id }) => {
               </Typography>
             </Grid>
           </Grid>
+          <Toolbar/>
           <Grid item xs={8}>
             <FormularioDonar proyecto={id} />
           </Grid>

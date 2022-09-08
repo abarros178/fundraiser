@@ -50,7 +50,7 @@ const FormularioDonar = ({ proyecto }) => {
             <Grid container>
                 <Grid item xs={12}>
                     <Typography variant="h4" gutterBottom>
-                        Gift amount
+                        Registro de informacion
                         <Divider className='w-full bg-black' />
                     </Typography>
                     <Grid container my={3} >
