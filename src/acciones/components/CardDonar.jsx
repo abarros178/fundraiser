@@ -1,4 +1,4 @@
-import { Box, Grid, Skeleton, Stack, Toolbar, Typography } from '@mui/material'
+import { Box, Grid, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 import FormularioDonar from './FormularioDonar'
 

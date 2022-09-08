@@ -19,7 +19,7 @@ const FormularioDonar = ({ proyecto }) => {
         monto_donacion: 0,
         medio_pago: ""
     })
-    const { execute, loading, error, data, statusCode } = useHttpRequest(setting.donaciones_main, METHOD.POST)
+    const { execute, loading } = useHttpRequest(setting.donaciones_main, METHOD.POST)
     const navigate = useNavigate()
     const [otroMonto, setOtroMonto] = useState(false);
     const [activeBoton, setactiveBoton] = useState({ uno: false, dos: false, tres: false, cuatro: false })

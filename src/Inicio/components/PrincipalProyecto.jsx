@@ -1,10 +1,8 @@
 import { Container, Grid, Typography } from '@mui/material';
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
 import { ProyectListInicio } from '../../proyecto/components/ProyectListInicio';
 
 export const PrincipalProyecto = ({ data }) => {
-    const navigate = useNavigate()
 
 
     return (
