@@ -9,7 +9,7 @@ export const PrincipalProyecto = ({ data }) => {
 
     return (
 
-        <Container style={{ marginTop: '100px' }}>
+        <Container style={{ marginTop: '50px' }}>
             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
                 <Grid item xs={12}>
                     <Paper>
@@ -26,7 +26,7 @@ export const PrincipalProyecto = ({ data }) => {
                         </Collapse>
                     </Paper>
                 </Grid>
-                <Grid item xs={12} marginTop="100px">
+                <Grid item xs={12} marginTop="50px">
                     <Typography variant="h3" gutterBottom >
                         CONOCE TODAS NUESTRAS CAMPAÑAS AQUÍ
                     </Typography>

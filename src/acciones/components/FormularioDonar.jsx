@@ -66,11 +66,11 @@ const FormularioDonar = ({ proyecto }) => {
                             </Grid>
                             :
                             <>
-                                <Grid item mr={2}>
+                                <Grid item xs={12} sm={6} md={3} margin={1} >
 
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.uno ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        sx={activeBoton.uno ? { fontSize: '18px',width:"100%",backgroundColor:"#6693bd" } : { fontSize: '18px',width:"100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 20000, name: 'monto_donacion' } })
@@ -82,10 +82,10 @@ const FormularioDonar = ({ proyecto }) => {
                                     </Button>
 
                                 </Grid>
-                                <Grid item mr={2}>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.dos ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        sx={activeBoton.dos ? { fontSize: '18px',backgroundColor:"#6693bd",width:"100%" } : { fontSize: '18px',width:"100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 50000, name: 'monto_donacion' } })
@@ -94,10 +94,10 @@ const FormularioDonar = ({ proyecto }) => {
                                         $50.000 COP
                                     </Button>
                                 </Grid>
-                                <Grid item mr={2}>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.tres ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        sx={activeBoton.tres ? { fontSize: '18px',backgroundColor:"#6693bd",width:"100%" } : { fontSize: '18px',width:"100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 80000, name: 'monto_donacion' } })
@@ -106,10 +106,10 @@ const FormularioDonar = ({ proyecto }) => {
                                         $80.000 COP
                                     </Button>
                                 </Grid>
-                                <Grid item mr={2}>
+                                <Grid item  xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.cuatro ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        sx={activeBoton.cuatro ? { fontSize: '18px',backgroundColor:"#6693bd",width:"100%" } : { fontSize: '18px',width:"100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 100000, name: 'monto_donacion' } })
@@ -118,8 +118,8 @@ const FormularioDonar = ({ proyecto }) => {
                                         $100.000 COP
                                     </Button>
                                 </Grid>
-                                <Grid item mr={2}>
-                                    <Button onClick={handleOtroMonto} variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24'>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
+                                    <Button onClick={handleOtroMonto} variant="contained" sx={{ fontSize: '18px',width:"100%" }} className='w-28 h-24'>
                                         Otro monto
                                     </Button>
                                 </Grid>
