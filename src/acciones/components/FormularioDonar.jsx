@@ -132,10 +132,10 @@ const FormularioDonar = ({ proyecto }) => {
                         </Typography>
                         <form>
                             <Grid container >
-                                <Grid item xs={6} mr={3} >
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <TextField name='nombre' onChange={onInputChange} value={formState.nombre} fullWidth id="standard-basic" label="Nombre" variant="standard" />
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <TextField
                                         name='tipo'
                                         onChange={onInputChange}
@@ -154,7 +154,7 @@ const FormularioDonar = ({ proyecto }) => {
                                         ))}
                                     </TextField>
                                 </Grid>
-                                <Grid item xs={4} mb={2}>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <TextField
                                         value={formState.medio_pago}
                                         name='medio_pago'
@@ -173,7 +173,7 @@ const FormularioDonar = ({ proyecto }) => {
                                         ))}
                                     </TextField>
                                 </Grid>
-                                <Grid item xs={12} >
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1} >
                                     <Button onClick={handledDonar} variant="contained" size="large" disabled={loading}>
                                         Donar
                                     </Button>
