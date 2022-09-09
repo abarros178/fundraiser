@@ -7,10 +7,10 @@ import { CarrouselItem } from './CarrouselItem.jsx'
 export const HeaderInicio = ({ height = '600px' }) => {
     return (
         <>
-            <Carousel autoplay>
+            <Carousel autoplay >
                 {
-                    carrousel.map((img,index) => (
-                        <CarrouselItem height={height} img={img} key={index}/>
+                    carrousel.map((img, index) => (
+                        <CarrouselItem height={height} img={img} key={index} />
                     ))
                 }
             </Carousel>

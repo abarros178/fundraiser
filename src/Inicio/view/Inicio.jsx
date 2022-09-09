@@ -1,6 +1,5 @@
 import React from 'react'
 import { HeaderInicio } from '../components/HeaderInicio.jsx'
-import { ProyectListInicio } from '../../proyecto/components/ProyectListInicio.jsx'
 import { PrincipalProyecto } from '../components/PrincipalProyecto.jsx'
 import { METHOD, setting } from '../../settings/Settings.js'
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo.jsx'
