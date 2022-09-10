@@ -19,11 +19,16 @@ export const roles = [
 
 export const medio_pago = [
     {
+        value: 'Tarjeta credito',
+        label: 'Tarjeta credito',
+    },
+    {
+        value: 'Tarjeta debito',
+        label: 'Tarjeta debito',
+    },
+    {
         value: 'Efectivo',
         label: 'Efectivo',
     },
-    {
-        value: 'Tarjeta debido',
-        label: 'Tarjeta debido',
-    },
+
 ];
