@@ -66,11 +66,11 @@ const FormularioDonar = ({ proyecto }) => {
                             </Grid>
                             :
                             <>
-                                <Grid item mr={2}>
+                                <Grid item xs={12} sm={6} md={3} margin={1} >
 
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.uno ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        sx={activeBoton.uno ? { fontSize: '18px',width:"100%",backgroundColor:"#6693bd" } : { fontSize: '18px',width:"100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 20000, name: 'monto_donacion' } })
@@ -82,10 +82,10 @@ const FormularioDonar = ({ proyecto }) => {
                                     </Button>
 
                                 </Grid>
-                                <Grid item mr={2}>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.dos ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        sx={activeBoton.dos ? { fontSize: '18px',backgroundColor:"#6693bd",width:"100%" } : { fontSize: '18px',width:"100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 50000, name: 'monto_donacion' } })
@@ -94,10 +94,10 @@ const FormularioDonar = ({ proyecto }) => {
                                         $50.000 COP
                                     </Button>
                                 </Grid>
-                                <Grid item mr={2}>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.tres ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        sx={activeBoton.tres ? { fontSize: '18px',backgroundColor:"#6693bd",width:"100%" } : { fontSize: '18px',width:"100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 80000, name: 'monto_donacion' } })
@@ -106,10 +106,10 @@ const FormularioDonar = ({ proyecto }) => {
                                         $80.000 COP
                                     </Button>
                                 </Grid>
-                                <Grid item mr={2}>
+                                <Grid item  xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.cuatro ? { fontSize: '18px',backgroundColor:"#6693bd" } : { fontSize: '18px' }}
+                                        sx={activeBoton.cuatro ? { fontSize: '18px',backgroundColor:"#6693bd",width:"100%" } : { fontSize: '18px',width:"100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 100000, name: 'monto_donacion' } })
@@ -118,8 +118,8 @@ const FormularioDonar = ({ proyecto }) => {
                                         $100.000 COP
                                     </Button>
                                 </Grid>
-                                <Grid item mr={2}>
-                                    <Button onClick={handleOtroMonto} variant="contained" sx={{ fontSize: '18px' }} className='w-28 h-24'>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
+                                    <Button onClick={handleOtroMonto} variant="contained" sx={{ fontSize: '18px',width:"100%" }} className='w-28 h-24'>
                                         Otro monto
                                     </Button>
                                 </Grid>
@@ -132,10 +132,10 @@ const FormularioDonar = ({ proyecto }) => {
                         </Typography>
                         <form>
                             <Grid container >
-                                <Grid item xs={6} mr={3} >
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <TextField name='nombre' onChange={onInputChange} value={formState.nombre} fullWidth id="standard-basic" label="Nombre" variant="standard" />
                                 </Grid>
-                                <Grid item xs={4}>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <TextField
                                         name='tipo'
                                         onChange={onInputChange}
@@ -154,7 +154,7 @@ const FormularioDonar = ({ proyecto }) => {
                                         ))}
                                     </TextField>
                                 </Grid>
-                                <Grid item xs={4} mb={2}>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <TextField
                                         value={formState.medio_pago}
                                         name='medio_pago'
@@ -173,7 +173,7 @@ const FormularioDonar = ({ proyecto }) => {
                                         ))}
                                     </TextField>
                                 </Grid>
-                                <Grid item xs={12} >
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1} >
                                     <Button onClick={handledDonar} variant="contained" size="large" disabled={loading}>
                                         Donar
                                     </Button>
