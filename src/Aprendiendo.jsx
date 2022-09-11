@@ -1,6 +1,5 @@
 import React from 'react'
 import { StarOutlined, StarFilled, UpCircleTwoTone } from '@ant-design/icons';
-import { Button } from 'antd';
 import { Box, Typography } from '@mui/material';
 export const Aprendiendo = () => {
     return (
