@@ -1,6 +1,7 @@
 
+
 export const dominio = {
-    main: process.env.REACT_APP_SERVICES,
+    main: import.meta.env.VITE_SERVICES
 
 }
 

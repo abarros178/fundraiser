@@ -8,7 +8,7 @@ import { AboutUs } from '../components/AboutUs.jsx'
 
 
 const Inicio = () => {
-  const { data, loading, error } = useHttpRequestTwo(setting.proyecto_main + "630d0b51dda3b5d4e76a6363", METHOD.GET)
+  const { data, loading, error } = useHttpRequestTwo(setting.proyecto_main + "6317964e7e4794ccd1192cef", METHOD.GET)
   return (
     <>
       <HeaderInicio />

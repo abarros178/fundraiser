@@ -6,6 +6,8 @@ import {personas} from "../utils/Datos"
 import { AboutMe } from './AboutMe'
 export const AboutUs = () => {
     const {data, loading,statusCode}=useHttpRequest(setting.usuarios_main,METHOD.GET)
+
+
     return (
         <>
             <section className="text-gray-600 body-font">
@@ -14,7 +16,7 @@ export const AboutUs = () => {
                         loading
                         {
                             !loading &&
-                            data.map((item,index) =>(
+                            data?.map((item,index) =>(
                                 <AboutMe data={item} key={index}/>
                             ))
                         }
