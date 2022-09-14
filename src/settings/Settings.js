@@ -11,6 +11,7 @@ export const setting = {
     proyecto_main: dominio.main + "/api/proyectos/",
     donaciones_main: dominio.main + "/api/donaciones/",
     usuarios_main: dominio.main + "/api/usuarios/",
+    usuarios_main_admin: dominio.main + "/api/usuarios/admin",
 
 }
 
