@@ -3,11 +3,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FooterInicio } from '../Inicio/components/FooterInicio';
 import { HashLink } from 'react-router-hash-link';
+import { useHttpRequestTwo } from '../hooks/useHttpRequestTwo';
+import { METHOD, setting } from '../settings/Settings';
 const { Header, Content } = Layout;
 const AppLayout = ({ children }) => {
   const navigate = useNavigate();
-
-
+  useHttpRequestTwo(setting.visitas_main , METHOD.POST)
   return (<Layout className="layout">
     <Header>
       <div className="logo" />
