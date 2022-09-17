@@ -12,12 +12,13 @@ export const AboutUs = () => {
             <Grid container
                 direction="row"
                 justifyContent="flex-start"
-                alignItems="center" rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+                display="flex"
+                alignItems="center" rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
 
                 {
                     !loading &&
                     data?.map((item, index) => (
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} sm={6} md={4}>
                             <AboutMe data={item} key={index} />
                         </Grid>
                     ))
