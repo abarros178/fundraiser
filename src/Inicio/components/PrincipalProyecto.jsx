@@ -1,4 +1,4 @@
-import { Container, Grid, Paper, Typography } from '@mui/material';
+import { Box, Container, Grid, Paper, Typography } from '@mui/material';
 import React from 'react'
 import { ProyectListInicio } from '../../proyecto/components/ProyectListInicio';
 import { Collapse } from 'antd'
@@ -16,34 +16,34 @@ export const PrincipalProyecto = ({ data }) => {
                     <Paper>
                         <Collapse ghost >
                             <Panel header="¿Qué es crowdfunding?" key="1">
-                                <Typography variant='body1'>Es un modelo de financiación colectiva en la que todo el mundo puede donar sumas de dinero (sin importar qué tan grandes o pequeñas sean) para ayudar a una causa común; es hacer vaca por internet.
+                                <Typography variant='body1'>El crowdfunding es una forma de recaudación de fondos digital, mediante la cual grupos de personas donan cantidades variables (y a menudo relativamente pequeñas) de dinero para apoyar un objetivo particular </Typography>
+                            </Panel>
+                            <Panel header="¿En qué consiste el Crowdfunding basado en recompensa?" key="2">
+                                <Typography variant='body1'>El modelo de Crowdfunding basado en recompensas permite que las personas contribuyan a proyectos y reciban recompensas no financieras a cambio, como, por ejemplo, tarjetas de agradecimiento, menciones en la plataforma, saludos en redes sociales, entre otras.</Typography>
+                            </Panel>
+                            <Panel header="¿Cómo funcionan las campañas de Crowdfunding?" key="3">
+                                <Typography variant='body1'>Las campañas de Crowdfunding para ayudar a los estudiantes en su graduación oportuna son impulsadas por la misma universidad y también pueden ser postuladas por los propios estudiantes quienes deben esperar la aprobación de la plataforma.
+                                    <br /><br /> Por cualquier donación realizada la persona recibirá una pequeña recompensa no monetaria.</Typography>
+                            </Panel>
 
-                                    Hay varios modelos de crowdfunding, pero el nuestro es el modelo de donación con posibilidad de recompensa. Este modelo es legal en Colombia, pues se trata de un contrato de donación con destinación específica que hacemos entre los donantes y DxE (auspiciada por Fundación Help).</Typography>
-                            </Panel>
-                            <Panel header="¿Cómo funciona el crowdfunding?" key="2">
-                                <Typography variant='body1'>Una persona que esté interesada en financiar algún proyecto debe enviarlo para aprobación de la plataforma y, una vez sea validado por esta, debe publicarlo y promocionarlo lo más que pueda con sus contactos, amigos y desconocidos para que ellos se motiven a apoyarlo. Crear comunidad es fundamental para recolectar recursos.</Typography>
-                            </Panel>
 
                         </Collapse>
                     </Paper>
                 </Grid>
                 <Grid item xs={12} marginTop="50px">
-                    <Typography variant="h3" gutterBottom >
+                    <Typography variant="h4" gutterBottom >
                         CONOCE TODAS NUESTRAS CAMPAÑAS AQUÍ
                     </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <img
-                        className="object-cover object-center rounded"
-                        alt="hero"
-                        style={{ minHeight: "400px" }}
-                        src="https://firebasestorage.googleapis.com/v0/b/donaciones-79b72.appspot.com/o/chico_agradecido.jpg?alt=media&token=fea79837-14d5-4e81-87f9-eb0fab939a3e" />
 
+               
+                <ProyectListInicio />
+                
+                <Grid item xs={12} marginTop="50px">
+                    <Typography variant="h4" gutterBottom >
+                        CONOCE A LAS PERSONAS QUE HICIERON ESTO REALIDAD
+                    </Typography>
                 </Grid>
-                <Grid item xs={12} md={6}>
-                    <ProyectListInicio />
-                </Grid>
-
                 <AboutUs />
 
 
