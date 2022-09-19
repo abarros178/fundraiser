@@ -135,6 +135,17 @@ code {
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.16);
   cursor: pointer;
 }
+.agrandar{
+  height:"400px"
+}
+@media (max-width: 600px) {
+  .esconder {
+    display: none;
+  }
+  .agrandar{
+    height:"700px"
+  }
+}
 
 .circles li:nth-child(10) {
   left: 85%;

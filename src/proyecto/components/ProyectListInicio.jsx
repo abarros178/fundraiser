@@ -22,23 +22,14 @@ export const ProyectListInicio = () => {
                     </div>
 
                     : <>
-                        <Grid item xs={12} md={6}>
-                            <img
-                                className="object-cover object-center rounded"
-                                alt="hero"
-                                style={{ minHeight: "400px" }}
-                                src="https://firebasestorage.googleapis.com/v0/b/donaciones-79b72.appspot.com/o/chico_agradecido.jpg?alt=media&token=fea79837-14d5-4e81-87f9-eb0fab939a3e" />
-
-                        </Grid>
-                        <Grid item xs={12} md={6}>
+                        
+                        <Grid item xs={12}>
                             <Carousel
-                                autoPlay={false}
-                                stopAutoPlayOnHover
-                                height="400px"
+                                autoPlay={true}
                             >
                                 {
                                     data?.map((proyecto, index) => (
-                                        <Box key={index} sx={{height:"100%",width:"100%"}}>
+                                        <Box key={index} sx={{height:"100%",width:"100%"}} minHeight="400px">
                                             <ProyectItem  proyecto={proyecto} />
                                         </Box>
                                     ))
