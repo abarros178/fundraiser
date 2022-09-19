@@ -4,7 +4,6 @@ import { PrincipalProyecto } from '../components/PrincipalProyecto.jsx'
 import { METHOD, setting } from '../../settings/Settings.js'
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo.jsx'
 import { LoaderNeoSoft } from '../../components/LoaderNeoSoft.jsx'
-import { AboutUs } from '../components/AboutUs.jsx'
 
 
 const Inicio = () => {

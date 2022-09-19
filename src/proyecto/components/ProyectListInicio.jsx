@@ -4,7 +4,7 @@ import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo.jsx'
 import { METHOD, setting } from '../../settings/Settings'
 import { ProyectItem } from './ProyectItem'
 import Carousel from 'react-material-ui-carousel'
-import { Grid } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 
 export const ProyectListInicio = () => {
     const { data, loading } = useHttpRequestTwo(setting.proyecto_main, METHOD.GET)
@@ -38,10 +38,9 @@ export const ProyectListInicio = () => {
                             >
                                 {
                                     data?.map((proyecto, index) => (
-                                        <>
-
-                                            <ProyectItem key={index} proyecto={proyecto} />
-                                        </>
+                                        <Box key={index} sx={{height:"100%",width:"100%"}}>
+                                            <ProyectItem  proyecto={proyecto} />
+                                        </Box>
                                     ))
                                 }
                             </Carousel>

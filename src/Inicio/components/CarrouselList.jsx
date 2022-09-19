@@ -1,16 +1,18 @@
-import { Carousel, Image } from 'antd'
+import { Carousel } from 'antd'
 import React from 'react'
-import { ButtonNeoSoft } from '../../components/ButtonNeoSoft'
-import { carrousel } from '../utils/Datos'
+import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo'
+import { METHOD, setting } from '../../settings/Settings'
 import { CarrouselItem } from './CarrouselItem.jsx'
 
 export const HeaderInicio = ({ height = '600px' }) => {
+    const { data } = useHttpRequestTwo(setting.objetos + "/tipo/carrousel", METHOD.GET)
+    console.log(data);
     return (
         <>
             <Carousel autoplay >
                 {
-                    carrousel.map((item, index) => (
-                        <CarrouselItem height={height} item={item} key={index} />
+                    data?.map(({ objeto }, index) => (
+                        <CarrouselItem height={height} item={objeto} key={index} />
                     ))
                 }
             </Carousel>
