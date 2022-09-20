@@ -6,7 +6,6 @@ import {
 import { AccionesProyectos } from '../acciones/view/AccionesProyectos.jsx';
 import Inicio from '../Inicio/view/Inicio.jsx';
 import { ListProyects } from '../listaProyectos/view/ListProyects.jsx';
-import { ProyectoView } from '../proyecto/view/ProyectoView.jsx';
 
 
 
@@ -16,7 +15,6 @@ export const AppRouter = () => {
         <>
             <Routes>
                 <Route path="/" element={<Inicio />} />
-                <Route path="/proyecto" element={<ProyectoView />} />
                 <Route path="/donar" element={<ListProyects />} />
                 <Route path="/donar/proyecto/:id" element={<AccionesProyectos />} />
             </Routes>

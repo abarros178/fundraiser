@@ -22,20 +22,20 @@ export const ProyectListInicio = () => {
                     </div>
 
                     : <>
-                        
-                        <Grid item xs={12}>
-                            <Carousel
-                                autoPlay={true}
-                            >
-                                {
-                                    data?.map((proyecto, index) => (
-                                        <Box key={index} sx={{height:"100%",width:"100%"}} minHeight="400px">
-                                            <ProyectItem  proyecto={proyecto} />
-                                        </Box>
-                                    ))
-                                }
-                            </Carousel>
-                        </Grid>
+
+
+                        <Carousel
+                            autoPlay={true}
+                        >
+                            {
+                                data?.map((proyecto, index) => (
+                                    <Box key={index} sx={{ height: "100%", width: "100%" }} minHeight="400px">
+                                        <ProyectItem proyecto={proyecto} />
+                                    </Box>
+                                ))
+                            }
+                        </Carousel>
+
 
                     </>
             }

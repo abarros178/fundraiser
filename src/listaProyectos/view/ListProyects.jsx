@@ -13,7 +13,7 @@ export const ListProyects = () => {
             <Card style={{ borderRadius: '5px', marginBottom: '10px', boxShadow: '5px gray solid' }}>
                 <CardContent>
                     <Typography variant='h5'>
-                        Proyectos
+                        Campañas
                     </Typography>
                 </CardContent>
             </Card>

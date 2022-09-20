@@ -1,7 +1,7 @@
 import { Grid } from '@mui/material'
 import React from 'react'
-import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo'
-import { METHOD, setting } from '../../settings/Settings'
+import { useHttpRequestTwo } from '../../../hooks/useHttpRequestTwo'
+import { METHOD, setting } from '../../../settings/Settings'
 import { AboutMe } from './AboutMe'
 export const AboutUs = () => {
     const { data, loading } = useHttpRequestTwo(setting.usuarios_main_admin, METHOD.GET)

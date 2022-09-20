@@ -59,7 +59,6 @@ code {
   animation-delay: 4s;
 }
 
-
 .circles li:nth-child(4) {
   left: 40%;
   width: 60px;
@@ -135,15 +134,21 @@ code {
   box-shadow: 0 4px 3px rgba(0, 0, 0, 0.16);
   cursor: pointer;
 }
-.agrandar{
-  height:"400px"
+.agrandar {
+  height: "400px";
 }
 @media (max-width: 600px) {
   .esconder {
     display: none;
   }
-  .agrandar{
-    height:"700px"
+  .agrandar {
+    height: "700px";
+  }
+}
+
+@media (max-width: 400px) {
+  .ocultarCarrouselText {
+    display: none;
   }
 }
 
