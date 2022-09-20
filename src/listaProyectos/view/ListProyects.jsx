@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, Grid, Typography } from '@mui/material'
+import { Box, Card, CardContent, Grid, Typography } from '@mui/material'
 import { LoaderNeoSoft } from '../../components/LoaderNeoSoft'
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo'
 import { METHOD, setting } from '../../settings/Settings'
@@ -41,8 +41,10 @@ export const ListProyects = () => {
                     </Grid>
             }
 
-            <Grid item xs={12} height="400px">
-                <FooterProyectosDonar />
+            <Grid item xs={12} >
+                <Box sx={{ height: "100%", width: "100%" }}>
+                    <FooterProyectosDonar />
+                </Box>
             </Grid>
         </Grid>
 
