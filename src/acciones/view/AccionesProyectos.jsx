@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { CardDonar } from '../components/CardDonar';
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
 import { LoaderNeoSoft } from '../../components/LoaderNeoSoft';
+import { Container } from '@mui/material';
 
 
 
@@ -14,25 +15,27 @@ export const AccionesProyectos = () => {
     return (
         <>
 
-            {
-                error ?
-                    <h1>Lo sentimos, ocurrio un problema al cargar la pagina, intentelo de nuevo</h1>
-                    :
-                    <>
+            <Container style={{ marginTop: '50px' }}>
+                {
+                    error ?
+                        <h1>Lo sentimos, ocurrio un problema al cargar la pagina, intentelo de nuevo</h1>
+                        :
+                        <>
 
-                        {
-                            loading ?
-                                <>
-                                    <LoaderNeoSoft />
+                            {
+                                loading ?
+                                    <>
+                                        <LoaderNeoSoft />
 
-                                </>
-                                :
-                                <>
-                                    <CardDonar proyecto={data} id={params.id} />
-                                </>
-                        }
-                    </>
-            }
+                                    </>
+                                    :
+                                    <>
+                                        <CardDonar proyecto={data} id={params.id} />
+                                    </>
+                            }
+                        </>
+                }
+            </Container>
 
         </>
     )
