@@ -11,7 +11,7 @@ import "../acciones.css"
 import { formularioDonarValidation } from '../utils/validation';
 
 
-const FormularioDonar = ({ proyecto }) => {
+const FormularioDonar = ({ proyecto, other }) => {
     //todo: Realizar validaciones de formulario, bloquear boton al gurdar
     const { formState, onInputChange, onResetForm } = useForm({
         nombre: "",
@@ -48,11 +48,15 @@ const FormularioDonar = ({ proyecto }) => {
         <>
 
             <Grid container>
-                <Grid item xs={12}>
-                    <Typography variant="h4" gutterBottom>
-                        Registro de informacion
-                        <Divider className='w-full bg-black' />
-                    </Typography>
+                <Grid item xs={12} md={6} className="esconder">
+                    <img
+                        className="object-cover object-center rounded"
+                        alt="hero"
+                        src={other.img_v} />
+
+                </Grid>
+
+                <Grid item xs={12} sm={6}>
                     <Grid container my={3} >
                         {otroMonto ?
                             <Grid item mr={2}>
@@ -70,7 +74,7 @@ const FormularioDonar = ({ proyecto }) => {
 
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.uno ? { fontSize: '18px',width:"100%",backgroundColor:"#6693bd" } : { fontSize: '18px',width:"100%" }}
+                                        sx={activeBoton.uno ? { fontSize: '18px', width: "100%", backgroundColor: "#6693bd" } : { fontSize: '18px', width: "100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 20000, name: 'monto_donacion' } })
@@ -85,7 +89,7 @@ const FormularioDonar = ({ proyecto }) => {
                                 <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.dos ? { fontSize: '18px',backgroundColor:"#6693bd",width:"100%" } : { fontSize: '18px',width:"100%" }}
+                                        sx={activeBoton.dos ? { fontSize: '18px', backgroundColor: "#6693bd", width: "100%" } : { fontSize: '18px', width: "100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 50000, name: 'monto_donacion' } })
@@ -97,7 +101,7 @@ const FormularioDonar = ({ proyecto }) => {
                                 <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.tres ? { fontSize: '18px',backgroundColor:"#6693bd",width:"100%" } : { fontSize: '18px',width:"100%" }}
+                                        sx={activeBoton.tres ? { fontSize: '18px', backgroundColor: "#6693bd", width: "100%" } : { fontSize: '18px', width: "100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 80000, name: 'monto_donacion' } })
@@ -106,10 +110,10 @@ const FormularioDonar = ({ proyecto }) => {
                                         $80.000 COP
                                     </Button>
                                 </Grid>
-                                <Grid item  xs={12} sm={6} md={3} mr={2} margin={1}>
+                                <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
                                     <Button
                                         variant="contained"
-                                        sx={activeBoton.cuatro ? { fontSize: '18px',backgroundColor:"#6693bd",width:"100%" } : { fontSize: '18px',width:"100%" }}
+                                        sx={activeBoton.cuatro ? { fontSize: '18px', backgroundColor: "#6693bd", width: "100%" } : { fontSize: '18px', width: "100%" }}
                                         className="w-28 h-24"
                                         onClick={() => {
                                             onInputChange({ target: { value: 100000, name: 'monto_donacion' } })
@@ -119,7 +123,7 @@ const FormularioDonar = ({ proyecto }) => {
                                     </Button>
                                 </Grid>
                                 <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
-                                    <Button onClick={handleOtroMonto} variant="contained" sx={{ fontSize: '18px',width:"100%" }} className='w-28 h-24'>
+                                    <Button onClick={handleOtroMonto} variant="contained" sx={{ fontSize: '18px', width: "100%" }} className='w-28 h-24'>
                                         Otro monto
                                     </Button>
                                 </Grid>

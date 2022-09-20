@@ -1,6 +1,8 @@
 
 import { Container, Grid, Toolbar, Typography } from '@mui/material'
 import React from 'react'
+import ProyectoItemDonar from '../../listaProyectos/components/ProyectoItemDonar'
+import CardVertical from './CardVerticcal'
 import FormularioDonar from './FormularioDonar'
 
 
@@ -11,26 +13,30 @@ export const CardDonar = ({ proyecto, id }) => {
   //todo: Realizar loader al banner con skeleton
   return (
     <>
-      <Container maxWidth="100%" >
+      {/* <Container maxWidth="100%" >
         <Grid item>
           <img src={proyecto.img} alt="img" loading='' />
         </Grid>
-      </Container>
-      <Container>
-        <Grid >
+      </Container> */}
+      <Container maxWidth="90%">
+        <Grid container>
           <Toolbar />
+
           <Grid item xs={12} >
-            <Typography variant="h2" mb={4} gutterBottom>
+            <Typography variant="h2" mb={4} gutterBottom
+              fontSize={{xs:40,sm:60}}
+            >
               {proyecto.title}
             </Typography>
-            <Typography variant="subtitle1" >
-              {proyecto.descripcion}
-            </Typography>
           </Grid>
+
         </Grid>
         <Toolbar />
-        <Grid item xs={8}>
-          <FormularioDonar proyecto={id} />
+
+        <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+          <Grid item >
+            <FormularioDonar proyecto={id} other={proyecto.other} />
+          </Grid>
         </Grid>
       </Container>
 

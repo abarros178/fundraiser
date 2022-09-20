@@ -5,31 +5,39 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 
-export default function ProyectoItemDonar({ loading, data }) {
+export default function ProyectoItemDonar({ data: { other, title, descripcion, uid }, tipo = 1 }) {
   const navigate = useNavigate()
   //todo: mejorar la animacion de esta card
   return (
-    <Card sx={{ maxWidth: 300, minHeight: 600, transitionDuration: '3s', "&:hover": {
-      boxShadow:"#e9e9e9 0px 20px 20px 0px",
-				transform:"translatey(-20px)",
-				cursor:"pointer"
-        
-    }}}>
+    <Card sx={{
+      maxWidth: 300, minHeight: 600, transitionDuration: '3s', "&:hover": {
+        boxShadow: "#e9e9e9 0px 20px 20px 0px",
+        transform: "translatey(-20px)",
+        cursor: "pointer"
+
+      }
+    }}>
       <CardMedia
         style={{ maxWidth: '100%', maxHeight: '60%', height: "400px" }}
         component="img"
         alt="image"
         height="140"
-        image={data.other?.img_v}
-        onClick={() => navigate('/donar/proyecto/' + data.uid)}
-        
+        image={other?.img_v}
+        onClick={() => navigate('/donar/proyecto/' + uid)}
+
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-          {data.title}
+          {title}
         </Typography>
+        {
+          tipo === 2 &&
+          <Typography variant="body1" color="text.secondary">
+            {descripcion}
+          </Typography>
+        }
       </CardContent>
-      
+
     </Card>
   );
 }
