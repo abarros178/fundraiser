@@ -14,7 +14,7 @@ export const AboutMe = ({ data }) => {
                     <p className="text-gray-500">{data.puesto}</p>
                 </div>
             </div> */}
-            <Card sx={{width:"300px", maxWidth: "345px", padding: "30px", minHeight: "400px",minWidth:"250px" }}>
+            <Card sx={{width:"100%", maxWidth: "345px", padding: "30px", minHeight: "400px",minWidth:"250px" }}>
                 <Grid container justifyContent="center" >
                     <Grid item xs={12} >
                         <Box sx={{display:"flex", justifyContent:"center"}}>

@@ -12,8 +12,7 @@ export const AboutUs = () => {
             <Grid container
                 direction="row"
                 justifyContent="flex-start"
-                display="flex"
-                alignItems="center" rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
+                display="flex"rowSpacing={2} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
 
                 {
                     !loading &&
