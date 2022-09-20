@@ -35,8 +35,6 @@ const AppLayout = ({ children }) => {
     </Header>
     <Content
       style={{
-        padding: '0 30px',
-        marginTop: '35px',
         minHeight: '72vh',
         color: 'white',
       }}
