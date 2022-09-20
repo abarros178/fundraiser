@@ -1,4 +1,5 @@
-import { Box, Grid, Toolbar, Typography } from '@mui/material'
+
+import { Container, Grid, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 import FormularioDonar from './FormularioDonar'
 
@@ -10,29 +11,28 @@ export const CardDonar = ({ proyecto, id }) => {
   //todo: Realizar loader al banner con skeleton
   return (
     <>
-      <Box sx={{ width: '100%' }}>
-        <Grid container rowSpacing={1} justifyContent="center"  >
-          <Grid >
-            <img src={proyecto.img} alt="img" loading=''/>
-          </Grid>
-          <Grid >
-            <Toolbar/>
-            <Grid item xs={12} >
-              <Typography variant="h2" mb={4} gutterBottom>
-                {proyecto.title}
-              </Typography>
-              <Typography variant="subtitle1" >
-                {proyecto.descripcion}
-              </Typography>
-            </Grid>
-          </Grid>
-          <Toolbar/>
-          <Grid item xs={8}>
-            <FormularioDonar proyecto={id} />
+      <Container maxWidth="100%" >
+        <Grid item>
+          <img src={proyecto.img} alt="img" loading='' />
+        </Grid>
+      </Container>
+      <Container>
+        <Grid >
+          <Toolbar />
+          <Grid item xs={12} >
+            <Typography variant="h2" mb={4} gutterBottom>
+              {proyecto.title}
+            </Typography>
+            <Typography variant="subtitle1" >
+              {proyecto.descripcion}
+            </Typography>
           </Grid>
         </Grid>
-      </Box>
-
+        <Toolbar />
+        <Grid item xs={8}>
+          <FormularioDonar proyecto={id} />
+        </Grid>
+      </Container>
 
       {/* 
       <div style={{ backgroundColor: 'white', borderTopLeftRadius: "25px"}}>

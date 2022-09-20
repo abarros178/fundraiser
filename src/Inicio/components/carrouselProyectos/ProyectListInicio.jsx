@@ -25,7 +25,7 @@ export const ProyectListInicio = () => {
 
 
                         <Carousel
-                            autoPlay={true}
+                            autoPlay={false}
                         >
                             {
                                 data?.map((proyecto, index) => (
