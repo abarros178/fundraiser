@@ -18,7 +18,7 @@ export const AboutUs = () => {
                 {
                     !loading &&
                     data?.map((item, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={index}>
+                        <Grid item xs={12} sm={6} md={4} key={index} style={{display:"flex", flexWrap:"nowrap"}}>
                             <AboutMe data={item}  />
                         </Grid>
                     ))

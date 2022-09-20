@@ -4,7 +4,7 @@ import { METHOD, setting } from '../../settings/Settings.js'
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo.jsx'
 import { LoaderNeoSoft } from '../../components/LoaderNeoSoft.jsx'
 import { Container, Grid, Paper, Typography } from '@mui/material'
-import { ProyectListInicio } from '../../proyecto/components/ProyectListInicio.jsx'
+import { ProyectListInicio } from '../components/carrouselProyectos/ProyectListInicio.jsx'
 import { AboutUs } from '../components/aboutUs/AboutUs.jsx'
 import { Informacion } from '../components/informacion/Informacion.jsx'
 
@@ -24,34 +24,35 @@ const Inicio = () => {
                 <LoaderNeoSoft />
                 :
                 (<>
-                  <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }} marginTop='50px' paddingX={10}>
+                  <Container>
+                    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }} marginTop='50px'>
 
-                    <Grid item xs={12}>
-                      <Informacion />
+                      <Grid item xs={12}>
+                        <Informacion />
+                      </Grid>
+
+                      <Grid item xs={12} marginTop="50px">
+                        <Typography variant="h4" gutterBottom >
+                          CONOCE TODAS NUESTRAS CAMPAÑAS AQUÍ
+                        </Typography>
+                      </Grid>
+
+                      <Grid item xs={12}>
+                        <ProyectListInicio />
+                      </Grid>
+
+                      <Grid item xs={12} marginTop="50px">
+                        <Typography variant="h4" gutterBottom >
+                          CONOCE A LAS PERSONAS QUE HICIERON ESTO REALIDAD
+                        </Typography>
+                      </Grid>
+
+                      <Grid item xs={12} marginTop="50px">
+                        <AboutUs />
+                      </Grid>
+
                     </Grid>
-
-                    <Grid item xs={12} marginTop="50px">
-                      <Typography variant="h4" gutterBottom >
-                        CONOCE TODAS NUESTRAS CAMPAÑAS AQUÍ
-                      </Typography>
-                    </Grid>
-
-                    <Grid item xs={12}>
-                      <ProyectListInicio />
-                    </Grid>
-
-                    <Grid item xs={12} marginTop="50px">
-                      <Typography variant="h4" gutterBottom >
-                        CONOCE A LAS PERSONAS QUE HICIERON ESTO REALIDAD
-                      </Typography>
-                    </Grid>
-                    
-                    <Grid item xs={12} marginTop="50px">
-                      <AboutUs />
-                    </Grid>
-
-
-                  </Grid>
+                  </Container>
 
                 </>)
 

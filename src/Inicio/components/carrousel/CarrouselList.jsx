@@ -6,7 +6,6 @@ import { CarrouselItem } from './CarrouselItem.jsx'
 
 export const HeaderInicio = ({ height = '600px' }) => {
     const { data } = useHttpRequestTwo(setting.objetos + "/tipo/carrousel", METHOD.GET)
-    console.log(data);
     return (
         <>
             <Carousel autoplay >
