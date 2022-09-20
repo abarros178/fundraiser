@@ -15,28 +15,25 @@ export const AccionesProyectos = () => {
     return (
         <>
 
-            <Container style={{ marginTop: '50px' }}>
-                {
-                    error ?
-                        <h1>Lo sentimos, ocurrio un problema al cargar la pagina, intentelo de nuevo</h1>
-                        :
-                        <>
+            {
+                error ?
+                    <h1>Lo sentimos, ocurrio un problema al cargar la pagina, intentelo de nuevo</h1>
+                    :
+                    <>
 
-                            {
-                                loading ?
-                                    <>
-                                        <LoaderNeoSoft />
+                        {
+                            loading ?
+                                <>
+                                    <LoaderNeoSoft />
 
-                                    </>
-                                    :
-                                    <>
-                                        <CardDonar proyecto={data} id={params.id} />
-                                    </>
-                            }
-                        </>
-                }
-            </Container>
-
+                                </>
+                                :
+                                <>
+                                    <CardDonar proyecto={data} id={params.id} />
+                                </>
+                        }
+                    </>
+            }
         </>
     )
 }

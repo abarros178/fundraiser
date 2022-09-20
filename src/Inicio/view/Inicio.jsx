@@ -10,62 +10,41 @@ import { Informacion } from '../components/informacion/Informacion.jsx'
 
 
 const Inicio = () => {
-  const { data, loading, error } = useHttpRequestTwo(setting.proyecto_main + "6317964e7e4794ccd1192cef", METHOD.GET)
+
   return (
     <>
+      <Container maxWidth="100%">
+        <Grid item xs={12}>
+          <HeaderInicio />
+        </Grid>
+      </Container>
+      <Container  >
+        <Grid item xs={12} marginTop='50px'>
+          <Informacion />
+        </Grid>
 
-      {
-        error ?
-          <h1>Lo sentimos, ocurrio un problema al cargar la pagina, intentelo de nuevo</h1>
-          :
-          <>
-            {
-              loading ?
-                <LoaderNeoSoft />
-                :
-                (<>
-                  <Container style={{ marginTop: '50px', padding:"0px" }}>
-                    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 1, md: 1 }}>
-                      <Grid item xs={12}>
-                        <HeaderInicio />
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Informacion />
-                      </Grid>
+        <Grid item xs={12} marginTop='50px'>
+          <Typography variant="h4" gutterBottom >
+            CONOCE TODAS NUESTRAS CAMPAÑAS AQUÍ
+          </Typography>
+        </Grid>
 
-                      <Grid item xs={12} marginTop="50px">
-                        <Typography variant="h4" gutterBottom >
-                          CONOCE TODAS NUESTRAS CAMPAÑAS AQUÍ
-                        </Typography>
-                      </Grid>
+        <Grid item xs={12} marginTop='50px'>
+          <ProyectListInicio />
+        </Grid>
 
-                      <Grid item xs={12}>
-                        <ProyectListInicio />
-                      </Grid>
+        <Grid item xs={12} marginTop='50px'>
+          <Typography variant="h4" gutterBottom >
+            CONOCE A LAS PERSONAS QUE HICIERON ESTO REALIDAD
+          </Typography>
+        </Grid>
 
-                      <Grid item xs={12} marginTop="50px">
-                        <Typography variant="h4" gutterBottom >
-                          CONOCE A LAS PERSONAS QUE HICIERON ESTO REALIDAD
-                        </Typography>
-                      </Grid>
-
-                      <Grid item xs={12} marginTop="50px">
-                        <AboutUs />
-                      </Grid>
-
-                    </Grid>
-                  </Container>
-
-                </>)
-
-            }
-
-          </>
-      }
+        <Grid item xs={12} marginTop='50px' >
+          <AboutUs />
+        </Grid>
 
 
-
-
+      </Container>
     </>
   )
 }

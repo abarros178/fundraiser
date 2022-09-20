@@ -12,7 +12,7 @@ export const ProyectItem = ({ proyecto }) => {
         <>
             <Card
                 sx={{
-                    minWidth: "20%", minHeight: "100%", "&:hover": {
+                    minWidth: "100%", minHeight: "100%", "&:hover": {
                         boxShadow: "#e9e9e9 0px 20px 20px 0px",
                         cursor: "pointer"
                     }
@@ -24,13 +24,15 @@ export const ProyectItem = ({ proyecto }) => {
                     <Grid container columnSpacing={{ xs: 2, sm: 2, md: 3 }} rowSpacing={2} height="100%">
                         <Grid item xs={12} md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }} >
                             <Grid container style={{ height: "100%" }}>
-                                <Grid item xs={12} style={{ height: "90%" }}>
-                                    <Typography gutterBottom variant="h5" component="div">
-                                        {proyecto.title}
-                                    </Typography>
-                                    <Typography variant="body1" color="text.secondary">
-                                        {proyecto.descripcion}
-                                    </Typography>
+                                <Grid item xs={12} style={{ height: "90%", padding:"20px" }}>
+                                    <Box marginTop={10}>
+                                        <Typography gutterBottom variant="h5" component="div">
+                                            {proyecto.title}
+                                        </Typography>
+                                        <Typography variant="body1" color="text.secondary">
+                                            {proyecto.descripcion}
+                                        </Typography>
+                                    </Box>
                                 </Grid>
                                 <Grid item xs={12} style={{ height: "10%" }}>
                                     <Box sx={{ display: "flex", alignContent: "end", justifyContent: "flex-end" }}>
