@@ -48,15 +48,26 @@ const FormularioDonar = ({ proyecto, other }) => {
         <>
             <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={12} sm={12} md={6} className="esconder">
-                    <img
-                        className="object-cover object-center rounded"
-                        alt="hero"
-                        src={other.img_c} />
+                    <Grid container>
+                        <Grid item xs={12}>
+                            <img
+                                className="object-cover object-center rounded"
+                                alt="hero"
+                                src={other.img_c} />
+                        </Grid>
+                        <Grid item xs={12} style={{ color: "black" }}>
+                            <Typography>
+                                Soy Camila Martínez tengo 21 años y vivo en el municipio de Santa Lucia – Atlántico; desde muy pequeña siempre estuve muy interesada en trabajar con niños, especialmente aquellos que sufren de problemas familiares, por eso me decidí a estudiar psicología ya que quiero ser una profesional entregada a la comunidad y las causas sociales.
+                                Tome la decisión de optar por la opción de grado de cursos libres porque quería seguir enriqueciendo mi perfil académico y sobre todo llevar a la práctica todo lo aprendido en mis comunidades, desafortunadamente un mal momento económico hoy me impide matricular el curso que tengo pendiente para poder graduarme oportunamente y seguir contribuyendo a mi comunidad.
+                                Tu ayuda para mi hoy es invaluable.
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
 
                 <Grid item xs={12} sm={12} md={6}>
-                    <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }} width="100%">
-                        <Grid item xs={12} sm={6} md={3} margin={1} >
+                    <Grid container  width="100%">
+                        <Grid item xs={12} sm={3} md={3} margin={1} >
                             <Button
                                 variant="contained"
                                 sx={activeBoton.uno ? { fontSize: '18px', width: "100%", backgroundColor: "#6693bd" } : { fontSize: '18px', width: "100%" }}
@@ -71,7 +82,7 @@ const FormularioDonar = ({ proyecto, other }) => {
                             </Button>
 
                         </Grid>
-                        <Grid item xs={12} sm={6} md={3} margin={1}>
+                        <Grid item xs={12} sm={3} md={3} margin={1}>
                             <Button
                                 variant="contained"
                                 sx={activeBoton.dos ? { fontSize: '18px', backgroundColor: "#6693bd", width: "100%" } : { fontSize: '18px', width: "100%" }}
@@ -83,7 +94,7 @@ const FormularioDonar = ({ proyecto, other }) => {
                                 $50.000 COP
                             </Button>
                         </Grid>
-                        <Grid item xs={12} sm={6} md={3} margin={1}>
+                        <Grid item xs={12} sm={3} md={3} margin={1}>
                             <Button
                                 variant="contained"
                                 sx={activeBoton.tres ? { fontSize: '18px', backgroundColor: "#6693bd", width: "100%" } : { fontSize: '18px', width: "100%" }}
@@ -95,7 +106,7 @@ const FormularioDonar = ({ proyecto, other }) => {
                                 $80.000 COP
                             </Button>
                         </Grid>
-                        <Grid item xs={12} sm={6} md={3} margin={1}>
+                        <Grid item xs={12} sm={3} md={3} margin={1}>
                             <Button
                                 variant="contained"
                                 sx={activeBoton.cuatro ? { fontSize: '18px', backgroundColor: "#6693bd", width: "100%" } : { fontSize: '18px', width: "100%" }}
@@ -107,19 +118,14 @@ const FormularioDonar = ({ proyecto, other }) => {
                                 $100.000 COP
                             </Button>
                         </Grid>
-                        <Grid item xs={12} sm={6} md={3} margin={1}>
+                        <Grid item xs={12} sm={3} md={3} margin={1}>
                             <Button onClick={handleOtroMonto} variant="contained" sx={{ fontSize: '18px', width: "100%" }} className='w-28 h-24'>
                                 Otro monto
                             </Button>
                         </Grid>
 
                         <Grid item xs={12} display="flex" >
-
-
-
-
-
-                            {/* otroMonto ?
+                            {otroMonto ?
                                 <Grid item xs={12} sm={6} md={4}>
                                     <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
                                         <AttachMoneyIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
@@ -129,10 +135,8 @@ const FormularioDonar = ({ proyecto, other }) => {
                                         </Button>
                                     </Box>
                                 </Grid>
-                                : 
-                                <Grid container width="100%">
-                                    
-    </Grid>*/}
+                                :
+                                <></>}
                         </Grid>
 
 
@@ -145,10 +149,10 @@ const FormularioDonar = ({ proyecto, other }) => {
                             </Typography>
                             <form>
                                 <Grid container >
-                                    <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
+                                    <Grid item xs={12} sm={6} md={8} mr={2} margin={1}>
                                         <TextField name='nombre' onChange={onInputChange} value={formState.nombre} fullWidth id="standard-basic" label="Nombre" variant="standard" />
                                     </Grid>
-                                    <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
+                                    <Grid item xs={12} sm={6} md={8} mr={2} margin={1}>
                                         <TextField
                                             name='tipo'
                                             onChange={onInputChange}
@@ -167,7 +171,7 @@ const FormularioDonar = ({ proyecto, other }) => {
                                             ))}
                                         </TextField>
                                     </Grid>
-                                    <Grid item xs={12} sm={6} md={3} mr={2} margin={1}>
+                                    <Grid item xs={12} sm={6} md={8} mr={2} margin={1}>
                                         <TextField
                                             value={formState.medio_pago}
                                             name='medio_pago'
@@ -186,10 +190,12 @@ const FormularioDonar = ({ proyecto, other }) => {
                                             ))}
                                         </TextField>
                                     </Grid>
-                                    <Grid item xs={12} sm={6} md={3} mr={2} margin={1} >
-                                        <Button onClick={handledDonar} variant="contained" size="large" disabled={loading}>
-                                            Donar
-                                        </Button>
+                                    <Grid container>
+                                        <Grid item xs={12} sm={6} md={3} mr={2} margin={1} >
+                                            <Button onClick={handledDonar} variant="contained" size="large" disabled={loading}>
+                                                Donar
+                                            </Button>
+                                        </Grid>
                                     </Grid>
                                 </Grid>
                             </form>

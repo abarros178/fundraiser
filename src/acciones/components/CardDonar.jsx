@@ -24,7 +24,7 @@ export const CardDonar = ({ proyecto, id }) => {
 
           <Grid item xs={12} >
             <Typography variant="h2" mb={4} gutterBottom
-              fontSize={{xs:40,sm:60}}
+              fontSize={{ xs: 40, sm: 60 }}
             >
               {proyecto.title}
             </Typography>
