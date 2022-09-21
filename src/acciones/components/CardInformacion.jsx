@@ -17,14 +17,14 @@ export default function CardInformacion({ proyecto }) {
 
 
                 <Grid container columnSpacing={2} rowSpacing={2}>
-                    <Grid item xs={12} sm={12} md={12}>
+                    <Grid item xs={12} sm={12} md={6}>
                         <Box sx={{ border: 1, padding: 5 }}>
                             <Typography variant="body1" color="text.secondary">
                                 {proyecto.other.historia}
                             </Typography>
                         </Box>
                     </Grid>
-                    <Grid item xs={12} sm={12} md={12}>
+                    <Grid item xs={12} sm={12} md={6}>
                         <Box sx={{ border: 1, padding: 5 }}>
                             <Typography variant="body1" color="text.secondary">
                                 Objetivo de financiación:  {proyecto.monto_meta}

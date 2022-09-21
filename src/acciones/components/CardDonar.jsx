@@ -32,17 +32,17 @@ export const CardDonar = ({ proyecto, id }) => {
           </Grid>
 
         </Grid>
-
+        <Grid container marginTop={5}>
+          <Grid item xs={12} sm={12} md={12} >
+            <CardInformacion proyecto={proyecto} />
+          </Grid>
+        </Grid>
         <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item >
             <FormularioDonar proyecto={id} other={proyecto.other} />
           </Grid>
         </Grid>
-        <Grid container marginTop={5}>
-          <Grid item xs={12} sm={6} md={6} >
-            <CardInformacion proyecto={proyecto}/>
-          </Grid>
-        </Grid>
+
       </Container>
 
       {/* 

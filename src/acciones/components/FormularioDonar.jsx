@@ -138,10 +138,10 @@ const FormularioDonar = ({ proyecto, other }) => {
                         <Grid item xs={12} marginTop={5}>
                             <form>
                                 <Grid container >
-                                    <Grid item xs={12} sm={6} md={8} mr={2} margin={1}>
+                                    <Grid item xs={12} sm={4} md={3}     mr={2} margin={1}>
                                         <TextField name='nombre' onChange={onInputChange} value={formState.nombre} fullWidth id="standard-basic" label="Nombre" variant="standard" />
                                     </Grid>
-                                    <Grid item xs={12} sm={6} md={8} mr={2} margin={1}>
+                                    <Grid item xs={12} sm={4} md={3} mr={2} margin={1}>
                                         <TextField
                                             name='tipo'
                                             onChange={onInputChange}
@@ -160,7 +160,7 @@ const FormularioDonar = ({ proyecto, other }) => {
                                             ))}
                                         </TextField>
                                     </Grid>
-                                    <Grid item xs={12} sm={6} md={8} mr={2} margin={1}>
+                                    <Grid item xs={12} sm={4} md={3} mr={2} margin={1}>
                                         <TextField
                                             value={formState.medio_pago}
                                             name='medio_pago'
@@ -180,7 +180,7 @@ const FormularioDonar = ({ proyecto, other }) => {
                                         </TextField>
                                     </Grid>
                                     <Grid container>
-                                        <Grid item xs={12} sm={6} md={3} mr={2} margin={1} >
+                                        <Grid item xs={12} sm={4} md={3} mr={2} margin={1} >
                                             <Button onClick={handledDonar} variant="contained" size="large" disabled={loading}>
                                                 Donar
                                             </Button>
