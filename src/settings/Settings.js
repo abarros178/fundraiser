@@ -13,6 +13,7 @@ export const setting = {
     usuarios_main: dominio.main + "/api/usuarios/",
     usuarios_main_admin: dominio.main + "/api/usuarios/admin",
     objetos: dominio.main + "/api/objetosvarios",
+    reportes_metricas: dominio.main + "/api/reportes/metricas",
 
 }
 

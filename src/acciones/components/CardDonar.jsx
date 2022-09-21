@@ -40,7 +40,7 @@ export const CardDonar = ({ proyecto, id }) => {
         </Grid>
         <Grid container marginTop={5}>
           <Grid item xs={12} sm={6} md={6} >
-            <CardInformacion data={proyecto}/>
+            <CardInformacion proyecto={proyecto}/>
           </Grid>
         </Grid>
       </Container>
