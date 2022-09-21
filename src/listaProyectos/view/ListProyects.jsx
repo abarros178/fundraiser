@@ -10,8 +10,7 @@ export const ListProyects = () => {
     const { data = [], loading } = useHttpRequestTwo(setting.proyecto_main, METHOD.GET)
 
     return (
-        <Grid container>
-
+        <Grid container paddingX={15} paddingY={5}>
             <Grid item xs={12}>
                 <Card style={{ borderRadius: '5px', marginBottom: '10px', boxShadow: '5px gray solid' }}>
                     <CardContent>

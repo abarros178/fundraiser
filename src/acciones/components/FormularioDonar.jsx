@@ -55,13 +55,6 @@ const FormularioDonar = ({ proyecto, other }) => {
                                 alt="hero"
                                 src={other.img_c} />
                         </Grid>
-                        <Grid item xs={12} style={{ color: "black" }}>
-                            <Typography>
-                                Soy Camila Martínez tengo 21 años y vivo en el municipio de Santa Lucia – Atlántico; desde muy pequeña siempre estuve muy interesada en trabajar con niños, especialmente aquellos que sufren de problemas familiares, por eso me decidí a estudiar psicología ya que quiero ser una profesional entregada a la comunidad y las causas sociales.
-                                Tome la decisión de optar por la opción de grado de cursos libres porque quería seguir enriqueciendo mi perfil académico y sobre todo llevar a la práctica todo lo aprendido en mis comunidades, desafortunadamente un mal momento económico hoy me impide matricular el curso que tengo pendiente para poder graduarme oportunamente y seguir contribuyendo a mi comunidad.
-                                Tu ayuda para mi hoy es invaluable.
-                            </Typography>
-                        </Grid>
                     </Grid>
                 </Grid>
 
@@ -142,11 +135,7 @@ const FormularioDonar = ({ proyecto, other }) => {
 
                     </Grid>
                     <Grid container width="100%">
-                        <Grid item xs={12}>
-                            <Typography variant="h4" gutterBottom>
-                                Donor information
-                                <Divider className='w-full bg-black' />
-                            </Typography>
+                        <Grid item xs={12} marginTop={5}>
                             <form>
                                 <Grid container >
                                     <Grid item xs={12} sm={6} md={8} mr={2} margin={1}>

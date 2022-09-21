@@ -8,7 +8,7 @@ import { METHOD, setting } from '../settings/Settings';
 const { Header, Content } = Layout;
 const AppLayout = ({ children }) => {
   const navigate = useNavigate();
-  useHttpRequestTwo(setting.visitas_main , METHOD.POST)
+  useHttpRequestTwo(setting.visitas_main, METHOD.POST)
   return (<Layout className="layout">
     <Header>
       <div className="logo" />
@@ -36,10 +36,9 @@ const AppLayout = ({ children }) => {
     <Content
       style={{
         minHeight: '72vh',
-        color: 'white',
       }}
     >
-      <div className="site-layout-content">{children}</div>
+      {children}
     </Content>
     {
       //todo: ponerle links a los iconos
