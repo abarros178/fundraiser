@@ -1,5 +1,5 @@
 
-import { Container, Grid, Toolbar, Typography } from '@mui/material'
+import { Box, Container, Divider, Grid, Toolbar, Typography } from '@mui/material'
 import React from 'react'
 import ProyectoItemDonar from '../../listaProyectos/components/ProyectoItemDonar'
 import CardInformacion from './CardInformacion'
@@ -19,7 +19,7 @@ export const CardDonar = ({ proyecto, id }) => {
           <img src={proyecto.img} alt="img" loading='' />
         </Grid>
       </Container> */}
-      <Container maxWidth="90%">
+      <Container >
         <Grid container>
           <Toolbar />
 
@@ -32,16 +32,61 @@ export const CardDonar = ({ proyecto, id }) => {
           </Grid>
 
         </Grid>
-        <Grid container marginTop={5}>
-          <Grid item xs={12} sm={12} md={12} >
-            <CardInformacion proyecto={proyecto} />
-          </Grid>
-        </Grid>
+
+
         <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item >
-            <FormularioDonar proyecto={id} other={proyecto.other} />
+          <Grid item xs={12}>
+            <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+              <Grid item xs={12} sm={12} md={6} className="esconder">
+                <Grid container>
+                  <Grid item xs={12}>
+                    <img
+                      className="bordeimagen"
+                      alt="hero"
+                      src={proyecto.other.img_c} />
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6}>
+                <CardInformacion proyecto={proyecto} />
+              </Grid>
+
+            </Grid>
           </Grid>
         </Grid>
+
+        <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }} marginTop={2}>
+          <Grid item xs={12}>
+            <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+              <Grid item xs={12} sm={12} md={6}>
+                <Grid container rowSpacing={2}>
+                  <Grid item>
+
+                    <Typography variant='h3'>
+                      Historia de la campaña
+                    </Typography>
+
+
+                  </Grid>
+                  <Grid item>
+
+                    <Typography variant='body1'>
+                      {proyecto.other.historia}
+                    </Typography>
+
+
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item xs={12} sm={12} md={6}>
+                <FormularioDonar proyecto={id} other={proyecto.other} />
+              </Grid>
+
+
+            </Grid>
+          </Grid>
+        </Grid>
+
 
       </Container>
 
