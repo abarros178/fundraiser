@@ -12,7 +12,7 @@ export default function CardInformacion({ proyecto }) {
     //todo: mejorar la animacion de esta card
     console.log(setting.reportes_metricas + proyecto.uid)
     return (
-        <Box padding={5}>
+        <Box padding={5} >
             <Grid container rowSpacing={6} >
                 <Grid item xs={12} sm={6} md={6} >
                     <Statistic title="Objetivo de financiación" value={proyecto.monto_meta} valueStyle={{ color: '#3f8600' }} />

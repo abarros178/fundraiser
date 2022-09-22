@@ -69,12 +69,11 @@ export const CardDonar = ({ proyecto, id }) => {
 
                   </Grid>
                   <Grid item>
-
-                    <Typography variant='body1'>
-                      {proyecto.other.historia}
-                    </Typography>
-
-
+                    {proyecto.other.historia.map((item) => (
+                      <Typography variant='body1'>
+                        {item}
+                      </Typography>
+                    ))}
                   </Grid>
                 </Grid>
               </Grid>
