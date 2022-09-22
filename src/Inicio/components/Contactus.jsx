@@ -1,4 +1,4 @@
-import { Grid, TextField } from '@mui/material'
+import { Box, Grid, TextField } from '@mui/material'
 import React from 'react'
 import { useForm } from '../../hooks/useForm'
 
@@ -19,28 +19,27 @@ const Contactus = () => {
                         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Si tienes alguna duda, sugerencia o inquietud sobre nuestra plataforma y el servicio que prestamos te invitamos a escribir y con gusto te responderemos a la mayor brevedad posible</p>
                     </div>
 
-                    <Grid container columnSpacing={2} rowSpacing={2}>
-                        <Grid item xs={12} sm={6} md={6}>
-                            <TextField name='nombre' fullWidth id="outlined-basic" label="Nombre" variant="outlined" />
+                    <Grid container justifyContent="center" >
+                        <Grid container columnSpacing={2} rowSpacing={2}  width="80%" >
+                            <Grid item xs={12} sm={6} md={6}>
+                                <TextField name='nombre' fullWidth id="outlined-basic" label="Nombre" variant="outlined" />
+                            </Grid>
+
+                            <Grid item xs={12} sm={6} md={6}>
+                                <TextField name='correo'  fullWidth id="outlined-basic" type='email' label="Correo" variant="outlined" />
+                            </Grid>
+
+                            <Grid item xs={12} sm={12} md={12} >
+                                <TextField
+                                    id="outlined-multiline-static"
+                                    label="Mensaje"
+                                    multiline
+                                    rows={5}
+                                    fullWidth
+
+                                />
+                            </Grid>
                         </Grid>
-
-                        <Grid item xs={12} sm={6} md={6}>
-                            <TextField name='correo' fullWidth id="outlined-basic" type='email' label="Correo" variant="outlined" />
-                        </Grid>
-
-                        <Grid item xs={12} sm={12} md={12} >
-                            <TextField
-                                id="outlined-multiline-static"
-                                label="Mensaje"
-                                multiline
-                                rows={5}
-                                fullWidth
-                                
-                            />
-                        </Grid>
-
-
-
                     </Grid>
 
                     <div class="p-2 w-full">
