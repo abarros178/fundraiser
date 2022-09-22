@@ -19,3 +19,18 @@ export const formularioDonarValidation = (form) => {
     }
     return true
 }
+export const formularioContactanosValidation = (form) => {
+    if (!form.name) {
+        message.error("Debe registrar todos los valores")
+        return false
+    }
+    if (!form.email) {
+        message.error("Debe registrar todos los valores")
+        return false
+    }
+    if (!form.message) {
+        message.error("Debe registrar todos los valores")
+        return false
+    }
+    return true
+}
