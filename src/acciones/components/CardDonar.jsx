@@ -24,7 +24,7 @@ export const CardDonar = ({ proyecto, id }) => {
           <Toolbar />
 
           <Grid item xs={12} >
-            <Typography variant="h2" mb={4} gutterBottom
+            <Typography variant={"h1"} mb={4} gutterBottom
               fontSize={{ xs: 40, sm: 60 }}
             >
               {proyecto.title}
@@ -60,15 +60,15 @@ export const CardDonar = ({ proyecto, id }) => {
             <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
               <Grid item xs={12} sm={12} md={6}>
                 <Grid container rowSpacing={2}>
-                  <Grid item>
+                  <Grid item paddingX={5}>
 
-                    <Typography variant='h3'>
+                    <Typography variant='h4'>
                       Historia de la campaña
                     </Typography>
 
 
                   </Grid>
-                  <Grid item>
+                  <Grid item padding={5}>
                     {proyecto.other.historia.map((item) => (
                       <Typography variant='body1'>
                         {item}

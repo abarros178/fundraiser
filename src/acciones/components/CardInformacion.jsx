@@ -18,10 +18,10 @@ export default function CardInformacion({ proyecto }) {
                     <Statistic title="Objetivo de financiación" value={proyecto.monto_meta} valueStyle={{ color: '#3f8600' }} />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                    <Statistic title="Fondos recaudados" value={data?.mongoAlcanzado} />
+                    <Statistic title="Fondos recaudados" value={data?.mongoAlcanzado} valueStyle={{ color: '#3f8600' }}/>
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
-                    <Statistic title="Días restantes" value={data?.diasFaltantes} />
+                    <Statistic title="Días restantes" value={data?.diasFaltantes} valueStyle={{color:data?.diasFaltantes<10?"red":'#3f8600'}} />
                 </Grid>
                 <Grid item xs={12} sm={6} md={6}>
                     <Statistic title="Porcentaje alcanzado" value={data?.procentajeAlcanzado +"%"} />

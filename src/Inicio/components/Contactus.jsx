@@ -47,7 +47,7 @@ export default function Contactus() {
           </div>
           <form>
             <Grid container justifyContent="center">
-              <Grid container columnSpacing={2} rowSpacing={2} width="80%">
+              <Grid container columnSpacing={2} rowSpacing={2} width={{xs:"100%",sm:"80%",md:"80%"}}>
                 <Grid item xs={12} sm={6} md={6}>
                   <TextField
                     onChange={onInputChange}
