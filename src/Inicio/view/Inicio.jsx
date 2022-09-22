@@ -7,6 +7,7 @@ import { Container, Grid, Paper, Typography } from '@mui/material'
 import { ProyectListInicio } from '../components/carrouselProyectos/ProyectListInicio.jsx'
 import { AboutUs } from '../components/aboutUs/AboutUs.jsx'
 import { Informacion } from '../components/informacion/Informacion.jsx'
+import Contactus from '../components/Contactus.jsx'
 
 
 const Inicio = () => {
@@ -41,6 +42,11 @@ const Inicio = () => {
 
         <Grid item xs={12} marginTop='50px' >
           <AboutUs />
+        </Grid>
+
+        
+        <Grid item xs={12} marginTop='50px'>
+          <Contactus />
         </Grid>
 
 
