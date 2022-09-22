@@ -18,42 +18,32 @@ const Contactus = () => {
                         <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">CONTACTANOS</h1>
                         <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Si tienes alguna duda, sugerencia o inquietud sobre nuestra plataforma y el servicio que prestamos te invitamos a escribir y con gusto te responderemos a la mayor brevedad posible</p>
                     </div>
-      
-                    <form>
-                    <Grid container >
 
-                        <Grid item p={1} xs={6}>
+                    <Grid container columnSpacing={2} rowSpacing={2}>
+                        <Grid item xs={12} sm={6} md={6}>
                             <TextField name='nombre' fullWidth id="outlined-basic" label="Nombre" variant="outlined" />
                         </Grid>
-                        {/* <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-            <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"/> */}
 
-
-
-                        <Grid item p={1} xs={6}>
+                        <Grid item xs={12} sm={6} md={6}>
                             <TextField name='correo' fullWidth id="outlined-basic" type='email' label="Correo" variant="outlined" />
                         </Grid>
 
-
-
-                        {/* <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-            <textarea id="message" name="message" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea> */}
-                        <Grid item p={1} >
+                        <Grid item xs={12} sm={12} md={12} >
                             <TextField
-                            
                                 id="outlined-multiline-static"
                                 label="Mensaje"
                                 multiline
                                 rows={5}
-                                style={{ width: 655 }}
+                                fullWidth
+                                
                             />
                         </Grid>
-                        
+
+
 
                     </Grid>
-                    </form>
-          
-            <div class="p-2 w-full">
+
+                    <div class="p-2 w-full">
                         <button class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
                     </div>
                     <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
