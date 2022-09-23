@@ -145,8 +145,8 @@ const FormularioDonar = ({ proyecto, other }) => {
                                     helperText="Por favor selecciona"
                                     variant="standard"
                                 >
-                                    {roles?.map((option) => (
-                                        <MenuItem key={option.objeto.value} value={option.value}>
+                                    {roles?.map((option,index) => (
+                                        <MenuItem key={index} value={option.objeto.value}>
                                             {option.objeto.value}
                                         </MenuItem>
                                     ))}
@@ -164,8 +164,8 @@ const FormularioDonar = ({ proyecto, other }) => {
                                     helperText="Por favor selecciona"
                                     variant="standard"
                                 >
-                                    {medios_pagos?.map((option) => (
-                                        <MenuItem key={option.objeto.value} value={option.value}>
+                                    {medios_pagos?.map((option,index) => (
+                                        <MenuItem key={index} value={option.objeto.value}>
                                             {option.objeto.value}
                                         </MenuItem>
                                     ))}
