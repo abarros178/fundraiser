@@ -14,11 +14,7 @@ export const CardDonar = ({ proyecto, id }) => {
   //todo: Realizar loader al banner con skeleton
   return (
     <>
-      {/* <Container maxWidth="100%" >
-        <Grid item>
-          <img src={proyecto.img} alt="img" loading='' />
-        </Grid>
-      </Container> */}
+     
       <Container maxWidth="xl">
         <Grid container>
           <Toolbar />
