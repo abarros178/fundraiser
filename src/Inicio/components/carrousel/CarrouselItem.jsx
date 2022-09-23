@@ -7,7 +7,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 
 export const CarrouselItem = ({ height, item }) => {
     return (
-        <div style={{ maxHeight: "500px", height:"500px" }}>
+        <div style={{ maxHeight: "500px" }}>
             <Carousel showThumbs={false} showIndicators={false} showStatus={false} centerMode={false} useKeyboardArrows={true}>
                 <div style={{ maxHeight: "500px" }}>
                     <img src={item.url} alt='sss' />
