@@ -142,7 +142,7 @@ code {
 .agrandar {
   height: "400px";
 }
-@media (max-width: 600px) {
+@media (max-width: 900px) {
   .esconder {
     display: none;
   }

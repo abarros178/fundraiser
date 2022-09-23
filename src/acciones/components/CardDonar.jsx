@@ -19,7 +19,7 @@ export const CardDonar = ({ proyecto, id }) => {
           <img src={proyecto.img} alt="img" loading='' />
         </Grid>
       </Container> */}
-      <Container >
+      <Container maxWidth="xl">
         <Grid container>
           <Toolbar />
 

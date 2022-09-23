@@ -12,7 +12,7 @@ export const ListProyects = () => {
     return (
         <>
           
-            <Container style={{marginTop:"20px"}}>
+            <Container maxWidth="xl" style={{marginTop:"20px"}}>
                 <Grid item xs={12}>
                     <Card style={{ borderRadius: '5px', marginBottom: '10px', boxShadow: '5px gray solid' }}>
                         <CardContent>
@@ -31,7 +31,7 @@ export const ListProyects = () => {
                             <>
                                 {
                                     data.map((item, index) => (
-                                        <Grid item xs={12} sm={4} md={4} key={index}>
+                                        <Grid item xs={12} sm={4} md={3} key={index}>
                                             <ProyectoItemDonar data={item} />
                                         </Grid>
                                     ))

@@ -13,24 +13,24 @@ export default function CardInformacion({ proyecto }) {
     //todo: mejorar la animacion de esta card
     console.log(setting.reportes_metricas + proyecto.uid)
     return (
-        <Box padding={5} >
-            <Grid container rowSpacing={6} >
-                <Grid item xs={12} sm={6} md={6} >
-                    <Statistic title="Inicio el" value={moment(proyecto.fecha_inicio).toDate()} valueStyle={{ color: '#3f8600' }} />
+        <Box padding={3} >
+            <Grid container rowSpacing={6} columnSpacing={1}>
+                <Grid item xs={6} sm={6} md={4} >
+                    <Statistic title="Inicio el" value={moment(proyecto.fecha_inicio).format('DD/MM/YYYY')}  />
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} >
-                    <Statistic title="Finaliza el" value={proyecto.fecha_objetivo} valueStyle={{ color: '#3f8600' }} />
+                <Grid item xs={6} sm={6} md={4} >
+                    <Statistic title="Finaliza el" value={moment(proyecto.fecha_objetivo).format('DD/MM/YYYY')}  />
                 </Grid>
-                <Grid item xs={12} sm={6} md={6} >
+                <Grid item xs={6} sm={6} md={4} >
                     <Statistic title="Objetivo de financiación" value={proyecto.monto_meta} valueStyle={{ color: '#3f8600' }} />
                 </Grid>
-                <Grid item xs={12} sm={6} md={6}>
+                <Grid item xs={6} sm={6} md={4}>
                     <Statistic title="Fondos recaudados" value={data?.mongoAlcanzado} valueStyle={{ color: '#3f8600' }}/>
                 </Grid>
-                <Grid item xs={12} sm={6} md={6}>
+                <Grid item xs={6} sm={6} md={4}>
                     <Statistic title="Días restantes" value={data?.diasFaltantes} valueStyle={{color:data?.diasFaltantes<10?"red":'#3f8600'}} />
                 </Grid>
-                <Grid item xs={12} sm={6} md={6}>
+                <Grid item xs={6} sm={6} md={4}>
                     <Statistic title="Porcentaje alcanzado" value={data?.procentajeAlcanzado +"%"} />
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>

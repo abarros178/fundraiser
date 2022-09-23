@@ -16,7 +16,7 @@ const Inicio = () => {
           <HeaderInicio />
         </Grid>
       </Container>
-      <Container>
+      <Container maxWidth="xl">
         <Grid item xs={12} marginTop='50px'>
           <Informacion />
         </Grid>
