@@ -6,6 +6,7 @@ import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
 import { METHOD, setting } from '../../settings/Settings';
 import { Statistic } from 'antd';
 import { LinearProgress } from '@mui/material';
+import moment from 'moment';
 export default function CardInformacion({ proyecto }) {
 
     const { data } = useHttpRequestTwo(setting.reportes_metricas + "/" + proyecto.uid, METHOD.GET)
@@ -14,6 +15,12 @@ export default function CardInformacion({ proyecto }) {
     return (
         <Box padding={5} >
             <Grid container rowSpacing={6} >
+                <Grid item xs={12} sm={6} md={6} >
+                    <Statistic title="Inicio el" value={moment(proyecto.fecha_inicio).toDate()} valueStyle={{ color: '#3f8600' }} />
+                </Grid>
+                <Grid item xs={12} sm={6} md={6} >
+                    <Statistic title="Finaliza el" value={proyecto.fecha_objetivo} valueStyle={{ color: '#3f8600' }} />
+                </Grid>
                 <Grid item xs={12} sm={6} md={6} >
                     <Statistic title="Objetivo de financiación" value={proyecto.monto_meta} valueStyle={{ color: '#3f8600' }} />
                 </Grid>

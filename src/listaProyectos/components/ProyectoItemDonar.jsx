@@ -10,7 +10,7 @@ export default function ProyectoItemDonar({ data: { other, title, descripcion, u
   //todo: mejorar la animacion de esta card
   return (
     <Card sx={{
-      maxWidth: 300, minHeight: 600, transitionDuration: '3s', "&:hover": {
+      width:"100%", minHeight: 600, transitionDuration: '3s', "&:hover": {
         boxShadow: "#e9e9e9 0px 20px 20px 0px",
         transform: "translatey(-20px)",
         cursor: "pointer"

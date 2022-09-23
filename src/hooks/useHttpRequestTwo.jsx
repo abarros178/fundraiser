@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from 'axios'
+import Axios from 'axios'
 import { useEffect } from "react"
 
 
