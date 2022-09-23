@@ -15,7 +15,7 @@ export const FooterProyectosDonar = () => {
         >
             <CardContent sx={{ padding: "10px", height: "100%" }}>
                 <Grid container columnSpacing={{ xs: 2, sm: 2, md: 3 }} rowSpacing={2} height="100%">
-                    <Grid item xs={6} >
+                    <Grid item xs={12} md={6}>
                         <img src="https://firebasestorage.googleapis.com/v0/b/donaciones-79b72.appspot.com/o/proyecto_2_c.jpeg?alt=media&token=f1bd4e35-9c8c-4a8f-aa9d-9ed684e8639e" alt='sss' />
                     </Grid>
                     <Grid item xs={12} md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }} >

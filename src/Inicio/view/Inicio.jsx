@@ -53,12 +53,12 @@ const Inicio = () => {
                 </Typography>
               </Grid>
 
-              <Grid item xs={12} marginTop='50px' >
+              <Grid item xs={12} marginTop='50px'  id="acercade">
                 <AboutUs />
               </Grid>
 
 
-              <Grid item xs={12} marginTop='50px'>
+              <Grid item xs={12} marginTop='50px'  id="contactanos">
                 <Contactus />
               </Grid>
 

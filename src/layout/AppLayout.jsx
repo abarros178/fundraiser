@@ -30,19 +30,14 @@ const AppLayout = ({ children }) => {
         }, {
           label: <HashLink to="/#acercade">Acerca de</HashLink>,
           style: { position: 'relative', right: '0px' },
+        }, {
+          label: <HashLink to="/#contactanos">Contactanos</HashLink>,
+          style: { position: 'relative', right: '0px' },
         }]}
       />
     </Header>
-    <Content
-      style={{
-        minHeight: '72vh',
-      }}
-    >
-      {children}
-    </Content>
-    {
-      //todo: ponerle links a los iconos
-    }
+    {children}
+
     <FooterInicio />
   </Layout>)
 };
