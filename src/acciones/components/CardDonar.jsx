@@ -56,9 +56,9 @@ export const CardDonar = ({ proyecto, id }) => {
             <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
               <Grid item xs={12} sm={12} md={6}>
                 <Grid container rowSpacing={2}>
-                  <Grid item paddingX={5}>
+                  <Grid item paddingX={5} marginTop={2}>
 
-                    <Typography variant='h4'>
+                    <Typography variant='h6'>
                       Historia de la campaña
                     </Typography>
 
@@ -66,7 +66,7 @@ export const CardDonar = ({ proyecto, id }) => {
                   </Grid>
                   <Grid item padding={5}>
                     {proyecto.other.historia.map((item) => (
-                      <Typography variant='body1'>
+                      <Typography variant='subtitle1'>
                         {item}
                       </Typography>
                     ))}
