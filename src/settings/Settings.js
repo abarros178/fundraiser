@@ -1,7 +1,7 @@
 
 
 export const dominio = {
-    main: import.meta.env.VITE_SERVICES
+    main: "http://52.0.175.246:8080"
 
 }
 
