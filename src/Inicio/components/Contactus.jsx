@@ -7,6 +7,7 @@ import { formularioContactanosValidation } from "../../acciones/utils/validation
 import { useForm } from "../../hooks/useForm";
 import { useHttpRequest } from "../../hooks/useHttpRequest";
 import { METHOD, setting } from "../../settings/Settings";
+import emailjs from '@emailjs/browser';
 
 export default function Contactus() {
   const { formState, onInputChange, onResetForm } = useForm({
@@ -16,7 +17,9 @@ export default function Contactus() {
   });
   const { execute, loading } = useHttpRequest(setting.contactanos, METHOD.POST);
 //   const navigate = useNavigate();
-  const handleContactar = async () => {
+
+  const handleContactar = async (event) => {
+    
     if (!formularioContactanosValidation(formState)) return;
     const res = await execute({
       ...formState,
@@ -29,6 +32,12 @@ export default function Contactus() {
     } else {
       message.error("Ocurrio un problema al guardar.");
     }
+
+
+    emailjs.send('service_qb9jl5k','template_21l09vl',formState,'H7NsOA0SL3G0LY1XW')
+    .then(response => console.log(response))
+    .catch(error => console.log(error))
+
   };
 
   return (
