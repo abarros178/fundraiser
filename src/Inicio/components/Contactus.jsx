@@ -96,7 +96,7 @@ export default function Contactus() {
               </Grid>
             </Grid>
 
-            <Box container textAlign='center' p={1}>
+            <Box textAlign='center' p={1}>
               <Grid item xs={12} sm={4} md={3} mr={2} margin={1}>
                 <Button
                   onClick={handleContactar}

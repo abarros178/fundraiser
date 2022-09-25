@@ -7,16 +7,15 @@ import { useHttpRequest } from '../../hooks/useHttpRequest';
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
 import { METHOD, setting } from '../../settings/Settings';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
-/* import { medio_pago, roles } from '../utils/select'; */
 import "../acciones.css"
 import { formularioDonarValidation } from '../utils/validation';
 
 
 const FormularioDonar = ({ proyecto, other }) => {
-    const { data:medios_pagos } = useHttpRequestTwo(setting.objetos + "/tipo/MEDIOPAGO", METHOD.GET)
-    const { data:roles } = useHttpRequestTwo(setting.objetos + "/tipo/ROLES", METHOD.GET)
-    
-    console.log(medios_pagos)
+    const { data: medios_pagos } = useHttpRequestTwo(setting.objetos + "/tipo/MEDIOPAGO", METHOD.GET)
+    const { data: roles } = useHttpRequestTwo(setting.objetos + "/tipo/ROLES", METHOD.GET)
+
+
     const { formState, onInputChange, onResetForm } = useForm({
         nombre: "",
         tipo: "",
@@ -143,16 +142,17 @@ const FormularioDonar = ({ proyecto, other }) => {
                                     label="Es usted"
                                     helperText="Por favor selecciona"
                                     variant="standard"
+                                    
                                 >
-                                    {roles?.map((option,index) => (
-                                        <MenuItem key={index} value={option.objeto.value}>
+                                    {roles?.map((option, index) => (
+                                        <MenuItem  key={index} value={option.objeto.value}>
                                             {option.objeto.value}
                                         </MenuItem>
                                     ))}
                                 </TextField>
                             </Grid>
                             <Grid item xs={12} sm={4} md={3} mr={2} margin={1}>
-                                <TextField
+                             {/*    <TextField
                                     value={formState.medio_pago}
                                     name='medio_pago'
                                     onChange={onInputChange}
@@ -162,13 +162,18 @@ const FormularioDonar = ({ proyecto, other }) => {
                                     label="Medio de pago"
                                     helperText="Por favor selecciona"
                                     variant="standard"
+                                    SelectProps={{
+                                        multiple: true,
+                                        value: []
+                                    }}
+
                                 >
-                                    {medios_pagos?.map((option,index) => (
-                                        <MenuItem key={index} value={option.objeto.value}>
+                                    {medios_pagos?.map((option, index) => (
+                                        <MenuItem children key={index} value={option.objeto.value}>
                                             {option.objeto.value}
                                         </MenuItem>
                                     ))}
-                                </TextField>
+                                </TextField> */}
                             </Grid>
                             <Grid container>
                                 <Grid item xs={12} sm={4} md={3} mr={2} margin={1} >

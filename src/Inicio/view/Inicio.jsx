@@ -1,6 +1,6 @@
 import React from 'react'
 import { HeaderInicio } from '../components/carrousel/CarrouselList.jsx'
-import { Container, Grid, Paper, Typography } from '@mui/material'
+import { Container, Grid, Typography } from '@mui/material'
 import { ProyectListInicio } from '../components/carrouselProyectos/ProyectListInicio.jsx'
 import { AboutUs } from '../components/aboutUs/AboutUs.jsx'
 import { Informacion } from '../components/informacion/Informacion.jsx'

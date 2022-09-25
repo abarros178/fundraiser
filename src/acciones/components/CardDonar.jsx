@@ -64,8 +64,8 @@ export const CardDonar = ({ proyecto, id }) => {
 
                   </Grid>
                   <Grid item padding={5}>
-                    {proyecto.other.historia.map((item) => (
-                      <Typography variant='subtitle1'>
+                    {proyecto.other.historia.map((item,index) => (
+                      <Typography key={index} variant='subtitle1'>
                         {item}
                       </Typography>
                     ))}

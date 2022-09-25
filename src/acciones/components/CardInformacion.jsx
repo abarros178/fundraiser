@@ -30,7 +30,7 @@ export default function CardInformacion({ proyecto }) {
                     <Statistic title="Porcentaje alcanzado" value={data?.procentajeAlcanzado + "%"} />
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
-                    <LinearProgress variant="buffer" value={data?.procentajeAlcanzado} valueBuffer={100} />
+                    <LinearProgress variant="buffer" value={data?.procentajeAlcanzado|0} valueBuffer={100} />
                 </Grid>
             </Grid>
         </Box>
