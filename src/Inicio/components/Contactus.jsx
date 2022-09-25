@@ -25,7 +25,6 @@ export default function Contactus() {
       ...formState,
     });
     if (res.statusCode === 201) {
-      console.log(res.data);
       message.success("Se guardo con exito");
 
       onResetForm();
@@ -42,13 +41,13 @@ export default function Contactus() {
 
   return (
     <>
-      <section class="text-gray-600 body-font relative">
-        <div class="container px-5 py-24 mx-auto">
-          <div class="flex flex-col text-center w-full mb-12">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
+      <section className="text-gray-600 body-font relative">
+        <div className="container px-5 py-24 mx-auto">
+          <div className="flex flex-col text-center w-full mb-12">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
               CONTACTANOS
             </h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
               Si tienes alguna duda, sugerencia o inquietud sobre nuestra
               plataforma y el servicio que prestamos te invitamos a escribir y
               con gusto te responderemos a la mayor brevedad posible
@@ -110,8 +109,8 @@ export default function Contactus() {
               </Grid>
             </Box>
           </form>
-          <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-            <p class="text-indigo-500">example@email.com</p>
+          <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
+            <p className="text-indigo-500">example@email.com</p>
           </div>
         </div>
       </section>

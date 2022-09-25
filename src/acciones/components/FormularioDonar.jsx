@@ -38,7 +38,6 @@ const FormularioDonar = ({ proyecto, other }) => {
         if (!formularioDonarValidation(formState)) return
         const res = await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre })
         if (res.statusCode === 201) {
-            console.log(res.data);
             message.success("Se guardo con exito")
             onResetForm()
             navigate('/')

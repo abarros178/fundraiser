@@ -19,7 +19,7 @@ export const AboutMe = ({ data }) => {
                     <Grid item xs={12} >
                         <Box sx={{display:"flex", justifyContent:"center"}}>
 
-                            <Avatar sizes={300} alt="testimonial" src={data.img} style={{width:"100px",height:"100px"}}/>
+                            <Avatar  alt="testimonial" src={data.img} style={{width:"100px",height:"100px"}}/>
                         </Box>
                     </Grid>
                     <Grid item xs={12}  justifyContent={"center"} marginTop={3}>

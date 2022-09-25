@@ -8,7 +8,6 @@ export default function CardInformacion({ proyecto }) {
 
     const { data } = useHttpRequestTwo(setting.reportes_metricas + "/" + proyecto.uid, METHOD.GET)
     //todo: mejorar la animacion de esta card
-    console.log(setting.reportes_metricas + proyecto.uid)
     return (
         <Box padding={3} >
             <Grid container rowSpacing={6} columnSpacing={1}>
