@@ -12,7 +12,7 @@ import { formularioDonarValidation } from '../utils/validation';
 
 
 const FormularioDonar = ({ proyecto, other }) => {
-    const { data: medios_pagos } = useHttpRequestTwo(setting.objetos + "/tipo/MEDIOPAGO", METHOD.GET)
+    const { data: medios_pagos } = useHttpRequestTwo(setting.objetos + "tipo/MEDIOPAGO", METHOD.GET)
     const { data: roles } = useHttpRequestTwo(setting.objetos + "/tipo/ROLES", METHOD.GET)
 
 

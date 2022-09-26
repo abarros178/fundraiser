@@ -6,7 +6,7 @@ import { Statistic } from 'antd';
 import moment from 'moment';
 export default function CardInformacion({ proyecto }) {
 
-    const { data } = useHttpRequestTwo(setting.reportes_metricas + "/" + proyecto.uid, METHOD.GET)
+    const { data } = useHttpRequestTwo(setting.reportes_metricas  + proyecto.uid, METHOD.GET)
     //todo: mejorar la animacion de esta card
     return (
         <Box padding={3} >

@@ -11,7 +11,7 @@ import { METHOD, setting } from '../../settings/Settings.js'
 import { LoaderNeoSoft } from '../../components/LoaderNeoSoft.jsx'
 
 const Inicio = () => {
-  const { data, loading } = useHttpRequestTwo(setting.objetos + "/tipo/carrousel", METHOD.GET)
+  const { data, loading } = useHttpRequestTwo(setting.objetos + "tipo/carrousel", METHOD.GET)
 
 
   return (
