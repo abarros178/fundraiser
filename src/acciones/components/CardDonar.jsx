@@ -1,7 +1,6 @@
 
-import { Box, Container, Divider, Grid, Toolbar, Typography } from '@mui/material'
+import { Box, Container, Grid, Toolbar, Typography } from '@mui/material'
 import React from 'react'
-import ProyectoItemDonar from '../../listaProyectos/components/ProyectoItemDonar'
 import CardInformacion from './CardInformacion'
 import FormularioDonar from './FormularioDonar'
 
@@ -13,7 +12,7 @@ export const CardDonar = ({ proyecto, id }) => {
 
   return (
     <>
-     
+
       <Container maxWidth="xl">
         <Grid container>
           <Toolbar />
@@ -54,18 +53,15 @@ export const CardDonar = ({ proyecto, id }) => {
           <Grid item xs={12}>
             <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
               <Grid item xs={12} sm={12} md={6}>
-                <Grid container rowSpacing={2}>
+                <Grid container rowSpacing={2} justifyContent="center">
                   <Grid item paddingX={5} marginTop={2}>
-
-                    <Typography variant='h6'>
+                    <Typography variant='h5' style={{ textAlign: "center" }}>
                       Historia de la campaña
                     </Typography>
-
-
                   </Grid>
                   <Grid item padding={5}>
-                    {proyecto.other.historia.map((item,index) => (
-                      <Typography key={index} variant='subtitle1'>
+                    {proyecto.other.historia.map((item, index) => (
+                      <Typography align='justify' key={index} variant='subtitle1'>
                         {item}
                       </Typography>
                     ))}
