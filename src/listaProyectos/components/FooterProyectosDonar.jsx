@@ -5,8 +5,7 @@ import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo'
 import { METHOD, setting } from '../../settings/Settings'
 
 export const FooterProyectosDonar = () => {
-    const { data = [], loading } = useHttpRequestTwo(setting.objetos + "tipo/FOOTERPROYECTOS", METHOD.GET)
-    console.log(data)
+    const { data = [] } = useHttpRequestTwo(setting.objetos + "tipo/FOOTERPROYECTOS", METHOD.GET)
     return (
         <Card
             sx={{
@@ -22,7 +21,7 @@ export const FooterProyectosDonar = () => {
                     <Grid item xs={12} md={6}>
                         {
                             data?.map((proyecto, index) => (
-                                <img src={proyecto?.objeto.value} alt='sss' />
+                                <img key={index} src={proyecto?.objeto.value} alt='sss' />
                             ))
                         }
                     </Grid>

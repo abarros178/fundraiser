@@ -1,5 +1,5 @@
 import { Image } from '@mui/icons-material'
-import { Avatar, Box, Card, CardHeader, Grid } from '@mui/material'
+import { Avatar, Box, Card, CardHeader, Divider, Grid, Typography } from '@mui/material'
 import React from 'react'
 
 export const AboutMe = ({ data }) => {
@@ -14,12 +14,11 @@ export const AboutMe = ({ data }) => {
                         </Box>
                     </Grid>
                     <Grid item xs={12}  justifyContent={"center"} marginTop={3}>
-                        <p className="leading-relaxed">{data.descripcion}</p>
                         <span className="inline-block h-1 w-10 rounded bg-indigo-500 mt-6 mb-4"></span>
-                        <h2 className="text-gray-900 font-medium title-font tracking-wider text-sm">{data.nombre}</h2>
-                        <p className="text-gray-500">{data.puesto}</p>
-                        <br />
-                        <p className="text-gray-500">"{data.other.frase}"</p>
+                        <Typography variant='inherit'>{data.nombre}</Typography>
+                        <Typography variant='overline' color="gray" >{data.puesto}</Typography>
+                        <Divider  />
+                        <Typography marginTop={1} className="text-gray-500">"{data.other.frase}"</Typography>
                     </Grid>
                 </Grid>
             </Card>

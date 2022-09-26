@@ -152,7 +152,7 @@ const FormularioDonar = ({ proyecto, other }) => {
                                 </TextField>
                             </Grid>
                             <Grid item xs={12} sm={4} md={3} mr={2} margin={1}>
-                             {/*    <TextField
+                                <TextField
                                     value={formState.medio_pago}
                                     name='medio_pago'
                                     onChange={onInputChange}
@@ -173,7 +173,7 @@ const FormularioDonar = ({ proyecto, other }) => {
                                             {option.objeto.value}
                                         </MenuItem>
                                     ))}
-                                </TextField> */}
+                                </TextField>
                             </Grid>
                             <Grid container>
                                 <Grid item xs={12} sm={4} md={3} mr={2} margin={1} >
