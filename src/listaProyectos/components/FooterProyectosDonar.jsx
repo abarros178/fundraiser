@@ -1,4 +1,3 @@
-import { Image } from '@mui/icons-material'
 import { Card, CardContent, Grid, Typography } from '@mui/material'
 import React from 'react'
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo'
