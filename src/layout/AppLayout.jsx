@@ -5,20 +5,32 @@ import { FooterInicio } from '../Inicio/components/FooterInicio';
 import { HashLink } from 'react-router-hash-link';
 import { useHttpRequestTwo } from '../hooks/useHttpRequestTwo';
 import { METHOD, setting } from '../settings/Settings';
+import Atiempo from './../assets/Atiempo.png'
+import { Grid } from '@mui/material';
 const { Header, Content } = Layout;
 const AppLayout = ({ children }) => {
   const navigate = useNavigate();
   useHttpRequestTwo(setting.visitas_main, METHOD.POST)
   return (<Layout className="layout">
     <Header>
+      
       <div className="logo" />
+      
       <Menu
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['1']}
         selectable={false}
-        items={[{
-          label: `Fundacion`,
+        items={[
+
+          {
+          label: <img
+          className="bordeimagen"
+          alt="hero"
+          src={Atiempo} 
+          width="150"
+          height="80"
+          />,
           onClick: () => navigate('/'),
 
 
