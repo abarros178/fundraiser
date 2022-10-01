@@ -7,24 +7,24 @@ import { useHttpRequestTwo } from '../hooks/useHttpRequestTwo';
 import { METHOD, setting } from '../settings/Settings';
 import Atiempo from './../assets/Atiempo.png'
 import './layoutStyle.css'
+import ResponsiveAppBar from '../components/NavBar';
 const { Header } = Layout;
 
 const AppLayout = ({ children }) => {
-  const navigate = useNavigate();
+  
   useHttpRequestTwo(setting.visitas_main, METHOD.POST)
   return (
     <>
-      <Header>
+      {/*  <Header>
 
         <div className="logo" />
-
+       
         <Menu
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={['1']}
           selectable={false}
           items={[
-
             {
               label: <img
                 className="bordeimagen responsive-logo"
@@ -34,8 +34,6 @@ const AppLayout = ({ children }) => {
                 height="80"
               />,
               onClick: () => navigate('/'),
-
-
             },
             {
               label: 'Proyectos',
@@ -47,9 +45,15 @@ const AppLayout = ({ children }) => {
             }, {
               label: <HashLink to="/#contactanos">Contáctanos</HashLink>,
               style: { position: 'relative', right: '0px' },
+            }, {
+              label: <HashLink to="login" className='responsive-login-label'>Iniciar sesion</HashLink>,
+              style: { position:"absolute", right: '0px' },
             }]}
         />
-      </Header>
+
+
+      </Header> */}
+      <ResponsiveAppBar  logo={Atiempo}/>
       {children}
 
       <FooterInicio />

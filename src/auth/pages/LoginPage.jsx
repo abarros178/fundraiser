@@ -60,7 +60,7 @@ export const LoginPage = () => {
             </TextField>
           </Grid>
           <Grid container spacing={2} sx={{ mb: 2, mt: 1 }} >
-            <Grid item xs={12} md={6} sx={{ mt: 1 }} >
+            <Grid item xs={12} md={12 } sx={{ mt: 1 }} >
               <Button
                 disabled={isAuthenticated}
                 variant='contained'
@@ -73,20 +73,7 @@ export const LoginPage = () => {
                 </Typography>
               </Button>
             </Grid>
-            <Grid item xs={12} md={6} sx={{ mt: 1 }} >
-              <Button
-                disabled={isAuthenticated}
-                variant='contained'
-                fullWidth
-                md={6}
-                xs={12}
-                onClick={onGoogleSignIn}>
-                <Google />
-                <Typography sx={{ ml: 1 }}>
-                  Google
-                </Typography>
-              </Button>
-            </Grid>
+
 
           </Grid>
           <Grid container justifyContent direction='row'>

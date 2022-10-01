@@ -3,5 +3,10 @@
         margin-top: 20px;
         max-width:70px;
     }
-    
+    .responsive-login-label{
+        position: initial;
+        left: 0px;
+        right: 0px;
+    }
+
   }
