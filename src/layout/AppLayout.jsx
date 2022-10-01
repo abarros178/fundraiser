@@ -12,47 +12,49 @@ const { Header } = Layout;
 const AppLayout = ({ children }) => {
   const navigate = useNavigate();
   useHttpRequestTwo(setting.visitas_main, METHOD.POST)
-  return (<Layout className="layout">
-    <Header>
+  return (
+    <>
+      <Header>
 
-      <div className="logo" />
+        <div className="logo" />
 
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['1']}
-        selectable={false}
-        items={[
+        <Menu
+          theme="dark"
+          mode="horizontal"
+          defaultSelectedKeys={['1']}
+          selectable={false}
+          items={[
 
-          {
-            label: <img
-              className="bordeimagen responsive-logo"
-              alt="hero"
-              src={Atiempo}
-              width="150"
-              height="80"
-            />,
-            onClick: () => navigate('/'),
+            {
+              label: <img
+                className="bordeimagen responsive-logo"
+                alt="hero"
+                src={Atiempo}
+                width="150"
+                height="80"
+              />,
+              onClick: () => navigate('/'),
 
 
-          },
-          {
-            label: 'Proyectos',
-            onClick: () => navigate('/donar'),
+            },
+            {
+              label: 'Proyectos',
+              onClick: () => navigate('/donar'),
 
-          }, {
-            label: <HashLink to="/#acercade">Acerca de</HashLink>,
-            style: { position: 'relative', right: '0px' },
-          }, {
-            label: <HashLink to="/#contactanos">Contáctanos</HashLink>,
-            style: { position: 'relative', right: '0px' },
-          }]}
-      />
-    </Header>
-    {children}
+            }, {
+              label: <HashLink to="/#acercade">Acerca de</HashLink>,
+              style: { position: 'relative', right: '0px' },
+            }, {
+              label: <HashLink to="/#contactanos">Contáctanos</HashLink>,
+              style: { position: 'relative', right: '0px' },
+            }]}
+        />
+      </Header>
+      {children}
 
-    <FooterInicio />
-  </Layout>)
+      <FooterInicio />
+    </>
+  )
 };
 
 export default AppLayout;
