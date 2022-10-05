@@ -23,9 +23,9 @@ export const ProyectItem = ({ proyecto }) => {
                 <CardContent sx={{ padding: "10px", height: "100%" }}>
                     <Grid container columnSpacing={{ xs: 2, sm: 2, md: 3 }} rowSpacing={3}>
                         <Grid item xs={12} md={6}>
-                            <Grid container sx={{ width: "100%", height: "100%", padding: 2 }}>
+                            <Grid container sx={{ width: "100%", height: "100%"}} paddingX={2}>
                                 <Grid item xs={12}>
-                                    <Box style={{ alignSelf: "flex-start", width: "80%" }}>
+                                    <Box style={{ alignSelf: "flex-start", width: "80%" }} marginTop={{xs:2,md:2}}>
                                         <Typography gutterBottom variant="h5" component="div">
                                             {proyecto.title}
                                         </Typography>
