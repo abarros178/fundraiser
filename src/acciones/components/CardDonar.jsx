@@ -31,7 +31,7 @@ export const CardDonar = ({ proyecto, id }) => {
         <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={12}>
             <Grid container columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-              <Grid item xs={12} sm={12} md={6} className="esconder">
+              <Grid item xs={12} sm={12} md={6} >
                 <Grid container>
                   <Grid item xs={12}>
                     <img

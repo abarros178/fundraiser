@@ -73,6 +73,7 @@ export default function Contactus() {
                     onChange={onInputChange}
                     value={formState.email}
                     name="email"
+                    placeholder="Digite su email para poder contactarlo"
                     fullWidth
                     id="outlined-basic"
                     type="email"
@@ -110,7 +111,7 @@ export default function Contactus() {
             </Box>
           </form>
           <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-            <p className="text-indigo-500">example@email.com</p>
+            <p className="text-indigo-500">camargocamilo274@gmail.com</p>
           </div>
         </div>
       </section>
