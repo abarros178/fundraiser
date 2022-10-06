@@ -26,7 +26,7 @@ export const FooterProyectosDonar = () => {
                     </Grid>
                     <Grid item xs={12} md={6} sx={{ display: "flex", alignItems: "center", justifyContent: "center" }} >
                         <Typography variant="h5" color="text.secondary">
-                            Soy Daniela Vega y gracias a su ayuda hoy ya soy toda una profesional en contaduría publica
+                        Soy Daniela Vega y gracias a tu ayuda me convertí en profesional en Contaduría Pública
                         </Typography>
                     </Grid>
 

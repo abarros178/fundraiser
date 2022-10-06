@@ -12,7 +12,7 @@ export const ProyectItem = ({ proyecto }) => {
         <>
             <Card
                 sx={{
-                    minWidth: "100%", minHeight: "550px", "&:hover": {
+                    minWidth: "100%", minHeight: "100%", "&:hover": {
                         boxShadow: "#e9e9e9 0px 20px 20px 0px",
                         cursor: "pointer"
                     }
