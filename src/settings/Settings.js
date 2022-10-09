@@ -1,7 +1,7 @@
 
 
 export const dominio = {
-    main: "http://52.0.175.246:8080"
+    main: "http://52.0.175.246:8000"
 
 }
 
