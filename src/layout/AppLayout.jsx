@@ -7,11 +7,13 @@ import { useHttpRequestTwo } from '../hooks/useHttpRequestTwo';
 import { METHOD, setting } from '../settings/Settings';
 import Atiempo from './../assets/Atiempo.png'
 import './layoutStyle.css'
+import { useHttpRequest } from '../hooks/useHttpRequest';
 const { Header } = Layout;
 
 const AppLayout = ({ children }) => {
   const navigate = useNavigate();
   useHttpRequestTwo(setting.visitas_main, METHOD.POST)
+  const { execute, loading } = useHttpRequest(setting.visitas_main, METHOD.POST)
   return (<Layout className="layout">
     <Header>
 
@@ -38,7 +40,15 @@ const AppLayout = ({ children }) => {
           },
           {
             label: 'Proyectos',
-            onClick: () => navigate('/donar'),
+            onClick: () => {
+              navigate('/donar')
+              execute({
+                action: {
+                  type: 'LIST_PROYECTS',
+                 
+                }
+              })
+            },
 
           }, {
             label: <HashLink to="/#acercade">Acerca de</HashLink>,

@@ -4,8 +4,10 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { useNavigate } from 'react-router-dom';
 import { Box, Button, Grid } from '@mui/material';
+import { useHttpRequest } from '../../../hooks/useHttpRequest';
+import { METHOD, setting } from '../../../settings/Settings';
 export const ProyectItem = ({ proyecto }) => {
-
+    const { execute, loading } = useHttpRequest(setting.visitas_main, METHOD.POST)
     const navigate = useNavigate()
     return (
 
@@ -17,15 +19,24 @@ export const ProyectItem = ({ proyecto }) => {
                         cursor: "pointer"
                     }
                 }}
-                onClick={() => navigate("/donar/proyecto/" + proyecto.uid)}
+                onClick={() => {
+                    execute({
+                        action: {
+                            type: 'CARD_INICIO',
+                            proyecto: proyecto.uid
+                        }
+                    })
+                    navigate("/donar/proyecto/" + proyecto.uid)
+
+                }}
                 hover="true"
             >
                 <CardContent sx={{ padding: "10px", height: "100%" }}>
                     <Grid container columnSpacing={{ xs: 2, sm: 2, md: 3 }} rowSpacing={3}>
                         <Grid item xs={12} md={6}>
-                            <Grid container sx={{ width: "100%", height: "100%"}} paddingX={2}>
+                            <Grid container sx={{ width: "100%", height: "100%" }} paddingX={2}>
                                 <Grid item xs={12}>
-                                    <Box style={{ alignSelf: "flex-start", width: "80%" }} marginTop={{xs:2,md:2}}>
+                                    <Box style={{ alignSelf: "flex-start", width: "80%" }} marginTop={{ xs: 2, md: 2 }}>
                                         <Typography gutterBottom variant="h5" component="div">
                                             {proyecto.title}
                                         </Typography>
