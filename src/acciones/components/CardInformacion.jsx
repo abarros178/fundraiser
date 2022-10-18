@@ -1,13 +1,15 @@
 import * as React from 'react';
-import { Box, Grid, MenuItem, TextField, Typography, LinearProgress } from '@mui/material';
+import { Box, Grid, LinearProgress } from '@mui/material';
 import { useHttpRequestTwo } from '../../hooks/useHttpRequestTwo';
 import { METHOD, setting } from '../../settings/Settings';
 import { Statistic } from 'antd';
 import moment from 'moment';
 export default function CardInformacion({ proyecto }) {
 
-    const { data } = useHttpRequestTwo(setting.reportes_metricas  + proyecto.uid, METHOD.GET)
+    const { data } = useHttpRequestTwo(setting.reportes_metricas + proyecto.uid, METHOD.GET)
     //todo: mejorar la animacion de esta card
+    console.log(new Date(proyecto.fecha_inicio))
+    console.log(moment(proyecto.fecha_inicio).format('DD/MM/YYYY'))
     return (
         <Box padding={3} >
             <Grid container rowSpacing={6} columnSpacing={1}>
@@ -30,7 +32,7 @@ export default function CardInformacion({ proyecto }) {
                     <Statistic title="Porcentaje alcanzado" value={data?.procentajeAlcanzado + "%"} />
                 </Grid>
                 <Grid item xs={12} sm={12} md={12}>
-                    <LinearProgress variant="buffer" value={data?.procentajeAlcanzado|0} valueBuffer={100} />
+                    <LinearProgress variant="buffer" value={data?.procentajeAlcanzado | 0} valueBuffer={100} />
                 </Grid>
             </Grid>
         </Box>
