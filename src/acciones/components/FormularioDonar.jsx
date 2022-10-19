@@ -162,10 +162,7 @@ const FormularioDonar = ({ proyecto, other }) => {
                                     label="Medio de pago"
                                     helperText="Por favor selecciona"
                                     variant="standard"
-                                    SelectProps={{
-                                        multiple: true,
-                                        value: []
-                                    }}
+                                    
 
                                 >
                                     {medios_pagos?.map((option, index) => (
