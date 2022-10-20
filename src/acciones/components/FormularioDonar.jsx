@@ -35,15 +35,17 @@ const FormularioDonar = ({ proyecto, other }) => {
 
     const handledDonar = async () => {
         if (!formularioDonarValidation(formState)) return
-        const res = await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre })
-        if (res.statusCode === 201) {
-            message.success("Se guardo con exito")
-            onResetForm()
-            navigate('/')
-        } else {
-            message.error("Ocurrio un problema al guardar.",)
-        }
-
+        if(formState.monto_donacion>10000000) message.error("El monto de donacion debe ser menor o igual a $10.000.000")
+        else{
+            const res = await execute({ ...formState, proyecto, nombre: formState.nombre.length === 0 ? "Anonimo" : formState.nombre })
+            if (res.statusCode === 201) {
+                message.success("Se guardo con exito")
+                onResetForm()
+                navigate('/')
+            } else {
+                message.error("Ocurrio un problema al guardar.",)
+            }
+    }
     }
     return (
 
